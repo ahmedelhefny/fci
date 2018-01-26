@@ -23,4 +23,4 @@ Route::get('/Gallery','GallaryController@getall');
 
 Route::get('/informations', function () {
     return view('informations');
-});
+        });
