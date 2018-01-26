@@ -125,14 +125,16 @@
             <p class="text-center team-parag">صور جميع الندوات</p>
         
             <div class="row">
+
    
                 <!-- Start First Col -->
+               
                 <div class="col-md-3 col-sm-6">
                       <!-- Start team-content -->
                       <div class="team-content div1">
                           <div class="team-overlay">
 
-                              <h3>اسم الندوة</h3>
+                              <h3></h3>
                               <p>اسم مؤدي الندوة</p>
 
                                 <ul class="social-icon">
@@ -150,6 +152,7 @@
                       </div>
                     <!-- End Team-content -->
                 </div>
+          
                  <!-- End First Col --> 
                 
         <!-- -------------------------------------------------------------- -->
