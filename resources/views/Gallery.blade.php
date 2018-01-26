@@ -130,9 +130,11 @@
                 <div class="col-md-3 col-sm-6">
                       <!-- Start team-content -->
                       <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
+                          <div class="team-overlay">
+
+                              <h3>اسم الندوة</h3>
+                              <p>اسم مؤدي الندوة</p>
+
                                 <ul class="social-icon">
                                       <li><a href="#" class="fa fa-facebook"></a></li>
                                       <li><a href="#" class="fa fa-twitter"></a></li>
@@ -314,7 +316,8 @@
                     <!-- End Team-content -->
                 </div>
                  <!-- End seven Col -->
-                 
+
+              
         <!-- -------------------------------------------------------------- -->         
                 
                 

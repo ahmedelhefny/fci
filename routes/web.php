@@ -23,6 +23,4 @@ Route::get('/informations', function () {
     return view('informations');
 });
 
-Route::get('/Gallery', function () {
-    return view('Gallery');
-});
+Route::get('/Gallery','GallaryController@getall');
