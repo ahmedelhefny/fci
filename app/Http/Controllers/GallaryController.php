@@ -13,8 +13,9 @@ class GallaryController extends Controller
     //
     public function getall()
     {
-        $S_name = Seminars::all();
-        $name=DB::table('seminars')->get();
-        return view('Gallery',compact('name','S_name'));
+        $Spname=DB::table('speakers')
+            -> join('seminars','seminars.id','=','speakers.Seminar_id')
+            ->get();
+        return view('Gallery',compact('Spname'));
     }
 }

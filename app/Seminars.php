@@ -12,4 +12,9 @@ class Seminars extends Model
     {
         return $this->hasMany('App\SeminarImgs');
     }
+
+    public function speakers()
+    {
+        return $this->hasOne('App\Speakers');
+    }
 }

@@ -19,10 +19,8 @@ Route::get('/meetings', function () {
     return view('meetings');
 });
 
+Route::get('/Gallery','GallaryController@getall');
+
 Route::get('/informations', function () {
     return view('informations');
-});
-
-Route::get('/Gallery', function () {
-    return view('Gallery');
 });

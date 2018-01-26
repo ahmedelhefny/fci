@@ -127,248 +127,52 @@
             <div class="row">
    
                 <!-- Start First Col -->
+                @foreach($Spname as $key=>$item)
                 <div class="col-md-3 col-sm-6">
                       <!-- Start team-content -->
                       <div class="team-content div1">
                           <div class="team-overlay">
 
-                              <h3>اسم الندوة</h3>
-                              <p>اسم مؤدي الندوة</p>
+
+                              <h3>{{$item->S_name}}</h3>
+                              <p>{{$item->SP_name}}</p>
+
 
                                 <ul class="social-icon">
                                       <li><a href="#" class="fa fa-facebook"></a></li>
                                       <li><a href="#" class="fa fa-twitter"></a></li>
                                       <li><a href="#" class="fa fa-dribbble"></a></li>
                                 </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
+                              <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
                             </div>
                             <img src="images/folder.png" class="img-responsive">
                             <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
+                                <h3> {{$item->S_name}}</h3>
+
+                                <p>{{$item->SP_name}}  </p>
                             </div>
                       </div>
                     <!-- End Team-content -->
                 </div>
-                 <!-- End First Col --> 
-                
+                @endforeach
+                 <!-- End First Col -->
         <!-- -------------------------------------------------------------- -->
-        
-                 <!-- Start Second Col -->
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
-                </div>
-                 <!-- End Second Col --> 
-                    
-                
         <!-- -------------------------------------------------------------- -->
-   
-                <!-- Start Third Col -->
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
-                </div>
-                 <!-- End Third Col --> 
-                
-        <!-- -------------------------------------------------------------- -->
-                
-                <!-- Start Four Col -->
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
-                </div>
-                 <!-- End Four Col -->
-                 
-        <!-- -------------------------------------------------------------- -->
-                
-                
-        <!-- -------------------------------------------------------------- -->
-                
-                <!-- Start five Col -->
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
-                </div>
-                 <!-- End five Col -->
-                 
-        <!-- -------------------------------------------------------------- -->
-                
-        <!-- -------------------------------------------------------------- -->
-                
-                <!-- Start six Col -->
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
-                </div>
-                 <!-- End six Col -->
-                 
-        <!-- -------------------------------------------------------------- -->
-                
-                
-        <!-- -------------------------------------------------------------- -->
-                
-                <!-- Start seven Col -->
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
-                </div>
-                 <!-- End seven Col -->
-                 
-        <!-- -------------------------------------------------------------- -->         
-                
-                
-                
-        <!-- -------------------------------------------------------------- -->
-                
-                <!-- Start eight Col -->
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                            <div class="team-overlay">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                                <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3>اسم الندوة</h3>
-                                <p>اسم مؤدي الندوة</p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
-                </div>
-                 <!-- End eight Col -->
-                 
         <!-- -------------------------------------------------------------- -->
             </div>
             <!-- End First Row -->
         </div>
-    </section>  
-            
-            
+    </section>
 <!----------------------------------------------------->
-
-
-
 @extends('master')
     @section('body')
-<!-----------------------------------------------------> 
-    
+<!----------------------------------------------------->
     <!----------------------------------------------------->    
     <section class="h1h text-center">
 
     <div class="container">
         
     <!-- Button to open the modal login form -->
-
 
 <!-- The Modal -->
 <div id="id01" class="modal">
@@ -421,12 +225,7 @@ class="close" title="Close Modal">&times;</span>
 </div>    
         </div>     
  </section>   
-    
-    
-    
 
-    
-    
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap-arabic.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>   
