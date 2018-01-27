@@ -164,14 +164,15 @@
 
   <div class="carousel-inner">
       <div class="item active">
-           <img src="images/image-slide.png" alt="">
+           <img src="images/important imgs/m2.jpg" alt="">
       </div>
+      @foreach($ImgUrl as $key=>$img)
       <div class="item">
-           <img src="images/image-slide.png" alt="">
+          <a href="/DelImpImg/{{$img->id}}" style="position: absolute ; top: 2px; right: 250px;" ><i class="fa fa-window-close"  aria-hidden="true"></i>
+              </a>
+           <img src="images/important imgs/{{$img->Imp_url}}" alt="">
       </div>
-      <div class="item">
-           <img src="images/image-slide.png" alt="">
-      </div>
+      @endforeach
 
   <a class="left carousel-control" href="#myslide" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-right"></span>
@@ -215,19 +216,20 @@
 
 <!-- end logo -->
   
-       <!----------------------------------->
+       <!----------------style="position: relative; bottom: 40px; right: 500px;"------------------->
 <section class="new4">
     <div class="container">
         <div class="row">
             <div class="new44">
+
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                     <h2 class="h1">محاور الملتقي</h2>
-                    <h4> <i class="fa fa-envelope"></i> أ - التواصل مع الشركات العاملة في مجال الحاسبات والمعلومات لعرض أفاق العمل والخبرات المطلوبة في هذا المجال لتطوير مستوي خريجي الكلية بما يناسب احتياجات العمل</h4>
-                    <h4> <i class="fa fa-envelope-open"></i> ب - الدعم الفني لمشاريع التخرج لمرحلة البكالوريوس التي يمكن تحويلها لمنتج من خلال تبني الشركات لهذه المشروعات </h4>
-                    <h4>  <i class="fa fa-envelope"></i> ج - اطلاع أعضاء هيئة التدريس والطلبة علي احدث التكنولوجيا المستخدمة في مجال التخصص في سوق العمل</h4>
-                    <h4> <i class="fa fa-envelope-open"></i> د - الحصول علي فرص تدريب علي رأس العمل ببعض الشركات للطلاب وتطوير التدريب الصيفي لطلاب الكلية</h4>
-                    <h4> <i class="fa fa-envelope"></i> هـ - اقتراح مشاريع بحثية بين الكلية والشركات في اطار برامج دعم البحوث التكنولوجية</h4>
+                    @foreach($axes as $key=>$axe)
+                    <h4> <i class="fa fa-envelope"></i> {{$axe->A_content}}   <a class="btn-danger" href="/deleteAxes/{{$axe->id}}  "> حذف </a></h4>
+
+                    @endforeach
                 </div>
+
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
                     <img src="images/im1.jpg" alt="......">
                 </div>
@@ -244,55 +246,18 @@
             <hr style="width:140px;height:2px;background:#999;margin-top:-5px;">
             <h2>WE HELP YOU TO FIND YOUR WAY TO LEARNING NEW TECHNOLOGY</h2>
             <div class="new22">
-                
+
+                @foreach($parts as $key=> $part)
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <a href="/deletepart/{{$part->id}}"><i class="fa fa-times-circle" aria-hidden="true" style="position: relative; left: 170px; top: 19px;"></i></a>
                     <div class="new222">
-                        <img src="images/mans.png" alt=".....">
-                        <h3>MANSOURA UNIVERSITY</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet ,ipsum dolor sit amet.</p>
-                    </div>
+                        <img src="images/partners imgs/{{$part->P_url}}" alt=".....">
+                        <h3>{{$part->P_name}}</h3>
+                        <p class="lead"> {{$part->P_description}}</p>
+                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="new222">
-                        <img src="images/cop2.png" alt=".....">
-                        <h3>MANSOURA UNIVERSITY</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet ,ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="new222">
-                        <img src="images/mans.png" alt=".....">
-                        <h3>MANSOURA UNIVERSITY</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet ,ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="new222">
-                        <img src="images/cop2.png" alt=".....">
-                        <h3>MANSOURA UNIVERSITY</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet ,ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="new222">
-                        <img src="images/mans.png" alt=".....">
-                        <h3>MANSOURA UNIVERSITY</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet ,ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="new222">
-                        <img src="images/cop2.png" alt=".....">
-                        <h3>MANSOURA UNIVERSITY</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet ,ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-                
+                @endforeach
+
             </div>
         </div>
     </div>

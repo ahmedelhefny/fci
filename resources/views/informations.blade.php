@@ -206,17 +206,19 @@
 
                                 <div class="form-group">
                                     <input type="text" class="form-control input-lg"
-                                                  placeholder="السنه الدراسية">
+                                                  placeholder="اسم الكليه">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control input-lg"
-                                                  placeholder="اسم الندوة">
+                                                  placeholder="الفرقه ">
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <textarea class="form-control input-lg" 
-                                              placeholder="سبب حضورك الندوة!"></textarea>
+                                    <input type="text" class="form-control input-lg"
+                                           placeholder="القسم ">
                                 </div>
+
+
                                 
                                 <button type="button" class="btn btn-default btn-lg btn-block">
                                         التسجيل

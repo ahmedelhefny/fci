@@ -36,8 +36,11 @@
                 </div>
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <h3>الشكاوي</h3>
-                    <textarea placeholder="...."></textarea>
-                    <button class="btn btn-primary">ارسال</button>
+                    <form  method="post" action="/storecomplain" >
+                        {{csrf_field()}}
+                    <textarea placeholder="...." name="C_content" id="content"></textarea>
+                    <button type="submit" class="btn btn-primary"   >ارسال</button>
+                    </form>
                 </div>
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
 
