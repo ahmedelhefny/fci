@@ -68,12 +68,12 @@
 
 
             <li>
-                <a href="#">شركات النجاح</a>
+                <a href="#me_s">شركات النجاح</a>
             </li>
 
 
             <li>
-                <a href="#">محاور الملتقي</a>
+                <a href="#me_d">محاور الملتقي</a>
             </li>
 
             <li>
@@ -168,9 +168,17 @@
       </div>
       @foreach($ImgUrl as $key=>$img)
       <div class="item">
+<<<<<<< HEAD
           <a href="/DelImpImg/{{$img->id}}" style="position: absolute ; top: 2px; right: 250px;" ><i class="fa fa-window-close"  aria-hidden="true"></i>
               </a>
            <img src="images/important imgs/{{$img->Imp_url}}" alt="">
+=======
+          
+           <img src="images/image-slide.png" alt="">
+      </div>
+      <div class="item">
+           <img src="images/image-slide.png" alt="">
+>>>>>>> 5fcc3254a388d952ee303f5a1cfea17ed12bda4c
       </div>
       @endforeach
 
@@ -216,8 +224,12 @@
 
 <!-- end logo -->
   
+<<<<<<< HEAD
        <!----------------style="position: relative; bottom: 40px; right: 500px;"------------------->
 <section class="new4">
+=======
+<section id='me_d' class="new4">
+>>>>>>> 5fcc3254a388d952ee303f5a1cfea17ed12bda4c
     <div class="container">
         <div class="row">
             <div class="new44">
@@ -237,9 +249,9 @@
         </div>
     </div>
 </section>
-  <!------------------------------------>  
+  
     
-<section class="new2 text-center">
+<section id='me_s' class="new2 text-center">
     <div class="cov2">
         <div class="container">
             <h2 class="h1">شركاء النجاح</h2>

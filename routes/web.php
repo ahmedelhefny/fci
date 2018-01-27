@@ -33,5 +33,14 @@ Route::get('/Gallery','GallaryController@getall');
 
 Route::get('/informations', function () {
     return view('informations');
+<<<<<<< HEAD
 });
 
+=======
+        });
+
+     Route::get('/pic', function () {
+          return view('meeting_pic');
+   });
+        
+>>>>>>> 5fcc3254a388d952ee303f5a1cfea17ed12bda4c

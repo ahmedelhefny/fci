@@ -1,0 +1,151 @@
+body
+{
+font-family: 'Mirza', cursive;
+    padding-top: 100px;
+}
+
+/*----*/
+.color
+{    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #55bce9 0%, #7370b5 100%);
+    margin-top: -40px;
+    position: fixed;
+    top: 40px;
+    z-index: 999;
+}
+
+
+
+.dropdown-menu > li:hover
+{
+    background: transparent;
+}
+
+.dropdown-menu > li > a:hover
+{
+    background: transparent;
+    color: #fff;
+    
+}
+#sex .dropdown
+{
+    margin-top: 8px;
+}
+.caret
+{
+    color: #555;
+}
+.navbar .nav li .btn:hover
+{
+    color: #000;
+}
+.navbar .nav li .btn
+{
+    border-radius: 0;
+    background: transparent;
+    font-size: 16px;
+    color: #888;
+    font-weight: bold;
+    margin-top: 8px;
+    outline: 0;
+}
+.navbar-default
+{
+    box-shadow: 5px 5px 6px -6px #555;
+    padding-top:6px;
+    padding-bottom: 6px;
+}
+.navbar-default .navbar-nav > li > a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #888;
+}
+.navbar-default .navbar-brand
+{
+   font-size: 20px;
+    font-weight: bold;
+}
+.actives
+{
+    color: #000;
+}
+
+
+
+
+/****************************************/
+
+.foot
+{
+    background: rgba(12, 17, 22, 0.93);
+    background-size: cover;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.foot .h1
+{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.foot .fot h3
+{
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+.foot .fot textarea
+{
+    height: 60px;
+    border-radius: 5px; 
+    outline: 0;
+    background: rgba(115, 128, 138, 0.08);
+    display: block;
+}
+.foot .fot .btn
+{
+    font-weight: bold;
+    margin-top: 5px;
+}
+.foot .fot ul a
+{
+    text-decoration: none;
+}
+.foot .fot ul li
+{
+    list-style-type: none;
+    color: rgb(117, 128, 134);
+    font-size: 13px;
+    line-height: 2;
+    display: inline-flex;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.foot .fot ul i
+{
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 18px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgb(32, 182, 231);
+}
+.foot .fot ul li i
+{
+    font-size: 16px;
+    background: none;
+    color:#20b6e7;
+    display: inline-block;
+}
+/*****************/
+
+
+
+
