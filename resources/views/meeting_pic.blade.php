@@ -8,13 +8,16 @@
 <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/hover-min.css">
     <link rel="stylesheet" href="css/demo-page.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap-arabic.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/pic.css">
+
       <script src="js/respond.min.js"></script>
+      
 
 </head>
 <body>
@@ -115,69 +118,49 @@
 
 
 
-  <!-- Start Section  team -->
-    <section class="team text-center">
-    
-        <div class="container">
-            
-            <h2 class="text-center team-header wow bounce"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s">الندوات</h2>
-            <hr style="width:100px;height:2px;background:#22b6e9;margin-top:-5px;">
-            <p class="text-center team-parag">صور جميع الندوات</p>
-        
-            <div class="row">
 
-   
-                <!-- Start First Col -->
-                @foreach($Spname as $key=>$item)
-                <div class="col-md-3 col-sm-6">
-                      <!-- Start team-content -->
-                      <div class="team-content div1">
-                          <div class="team-overlay">
+<!-- The Modal -->
+<h2  > اسم الندوة </h2>
 
+<section>
+  <div class="container gal-container">
 
-                              <h3>{{$item->S_name}}</h3>
-                              <p>{{$item->SP_name}}</p>
-
-
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
-                              <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
-                            </div>
-                            <img src="images/folder.png" class="img-responsive">
-                            <div class="team-overlay-show">
-                                <h3> {{$item->S_name}}</h3>
-
-                                <p>{{$item->SP_name}}  </p>
-                            </div>
-                      </div>
-                    <!-- End Team-content -->
+    <div class="col-md-4 col-sm-12 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#1">
+          <img src="/images/m2.jpg">
+        </a>
+        <div class="modal fade" id="1" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="/images/m2.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the first one on my Gallery</h4>
                 </div>
-                @endforeach
-                 <!-- End First Col -->
-        <!-- -------------------------------------------------------------- -->
-        <!-- -------------------------------------------------------------- -->
-              <!-------------------------------------------------------------- -->
             </div>
-            <!-- End First Row -->
+          </div>
         </div>
-    </section>
-@extends('master')
-    @section('body')
+      </div>
+    </div>
+ 
+ </div>
+</section>
 
 
-    
+
+
+ @extends('master')
+    @section('body')  
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap-arabic.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>   
     <script src="js/popper.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/wow.min.js"></script> 
-    <script>new WOW().init();</script>  
-    <script src="js/owl.carousel.min.js"></script>
+    
+
         @stop
 </body>
 </html>

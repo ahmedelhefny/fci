@@ -68,12 +68,12 @@
 
 
             <li>
-                <a href="#">شركات النجاح</a>
+                <a href="#me_s">شركات النجاح</a>
             </li>
 
 
             <li>
-                <a href="#">محاور الملتقي</a>
+                <a href="#me_d">محاور الملتقي</a>
             </li>
 
             <li>
@@ -167,6 +167,7 @@
            <img src="images/image-slide.png" alt="">
       </div>
       <div class="item">
+          
            <img src="images/image-slide.png" alt="">
       </div>
       <div class="item">
@@ -215,8 +216,7 @@
 
 <!-- end logo -->
   
-       <!----------------------------------->
-<section class="new4">
+<section id='me_d' class="new4">
     <div class="container">
         <div class="row">
             <div class="new44">
@@ -235,9 +235,9 @@
         </div>
     </div>
 </section>
-  <!------------------------------------>  
+  
     
-<section class="new2 text-center">
+<section id='me_s' class="new2 text-center">
     <div class="cov2">
         <div class="container">
             <h2 class="h1">شركاء النجاح</h2>

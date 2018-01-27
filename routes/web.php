@@ -19,8 +19,13 @@ Route::get('/meetings', function () {
     return view('meetings');
 });
 
+Route::get('/Gallery','GallaryController@getall');
+
 Route::get('/informations', function () {
     return view('informations');
-});
+        });
 
-Route::get('/Gallery','GallaryController@getall');
+     Route::get('/pic', function () {
+          return view('meeting_pic');
+   });
+        
