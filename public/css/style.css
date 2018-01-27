@@ -1564,7 +1564,7 @@ fixed .caption span {
 }
 
 .mt2 {
-    background: url("../images/m2.jpg") no-repeat;
+    background: url("../images/important imgs/m2.jpg") no-repeat;
     height: 650px;
     background-size: contain;
     -moz-background-size: contain;
@@ -1578,5 +1578,3 @@ fixed .caption span {
     position: relative;
     left: 50px;
 }
-
-1;
