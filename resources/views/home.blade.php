@@ -225,7 +225,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                     <h2 class="h1">محاور الملتقي</h2>
                     @foreach($axes as $key=>$axe)
-                    <h4> <i class="fa fa-envelope"></i> {{$axe->A_content}}   <a class="btn-danger" href="/deleteAxes/{{$axe->id}}  "> حذف </a></h4>
+                    <h4> <i class="fa fa-envelope"></i> {{$axe->A_content}}  @if(Auth::check()&&Auth::user()->hasRole('admin')) <a class="btn-danger" href="/deleteAxes/{{$axe->id}}  "> حذف </a>@endif</h4>
 
                     @endforeach
                 </div>

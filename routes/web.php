@@ -35,7 +35,16 @@ Route::get('/informations', function () {
     return view('informations');
         });
 
-     Route::get('/pic', function () {
-          return view('meeting_pic');
-   });
+     
+
+
+/*Role*/
+
+/*if admin*/
+
+Route::group(['middleware'=>'roles','roles'=>['admin']],function()
+{
+    
+
+});
         
