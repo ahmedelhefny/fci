@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>معلومات الندوات</title>
 <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/hover-min.css">
-    <link rel="stylesheet" href="css/demo-page.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/bootstrap-arabic.css">
-    <link rel="stylesheet" href="css/style.css">
-      <script src="js/respond.min.js"></script>
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/hover.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/hover-min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/demo-page.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-arabic.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+      <script src="{{asset('js/respond.min.js')}}"></script>
 
 </head>
 <body>
@@ -70,7 +70,7 @@
                         <div class="dropdown1">
 
                           <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                             الندوات
+                             ندوات اليوم
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="#">السبت</a></li>
@@ -129,46 +129,50 @@
     
 <section class="nam text-center">
     <div class="container">
-                    <h2>ENTERPRISE MOBILITY</h2>
-            <img src="images/slo.png" alt=".....">
+                    <h2>{{$AllData->S_name}}</h2>
+            <img src="{{asset('images/Seminars_Image/'.$AllData->S_url)}}" alt=".....">
         <div class="row">
         <div class="namee">
 
             
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h4 style="display:inline-block;"><i class="fa fa-user-circle"></i>MOHAMED ABOU-LFOTOUH</h4>    <h4 style="display:inline-block;">(Socyle)</h4>
+                <h4 style="display:inline-block;"><i class="fa fa-user-circle"></i>{{$AllData->SP_name}}</h4>    <h4 style="display:inline-block;">(The Lecturer)</h4>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <a href="Gallery.blade.php"><h4><i class="fa fa-picture-o"></i> جميع صور الندوة</h4></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h4><i class="fa fa-clock-o"></i> من 10:00 الي 10:30</h4>
+                <h4><i class="fa fa-clock-o"></i> From:{{$AllData->S_start}} To:{{$AllData->S_end}}</h4>
             </div>
             
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <a href="#"><h4><i class="fa fa-plus"></i>رأيك في الندوة</h4></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h4><i class="fa fa-calendar-plus-o"></i> 15/4/2018</h4>
+                <h4><i class="fa fa-calendar-plus-o"></i> {{$AllData->S_date}}</h4>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <h4><i class="fa fa-map-marker"></i> at FCI University</h4> 
             </div>
 
 
-            
+            <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
+                ,ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
+
+                --------------------------------------
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
+                ,ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
+                -->
             
             
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h5>عن الندوة</h5><i class="fa fa-chevron-down"></i><br>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
-                ,ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
+            <p class="lead">{{$AllData->S_content}}
             </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h5>عن مقدم الندوة</h5><i class="fa fa-chevron-down"></i><br>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
-                ,ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
+            <p class="lead">{{$AllData->SP_content}}
             </p>
             </div>
             
@@ -195,32 +199,32 @@
                 <div class="">
                     
                      <!-- start Contact Form -->
-                        <form role="form" >
-                            
+                        <form role="form" action="/Registe/{{$AllData->Seminar_id}}" method="post" >
+                            {{csrf_field()}}
                             <!-- start Div Form -->
                             <div class="col-md-offset-2 col-md-8">
                                 
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-lg" placeholder="الاسم">
+                                    <input type="text" class="form-control input-lg" placeholder="الاسم" name="name">
                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control input-lg"
-                                                  placeholder="اسم الكليه">
+                                                  placeholder="اسم الكليه" name="faculty">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control input-lg"
-                                                  placeholder="الفرقه ">
+                                                  placeholder="الفرقه " name="level">
                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control input-lg"
-                                           placeholder="القسم ">
+                                           placeholder="القسم " name="dept">
                                 </div>
 
 
                                 
-                                <button type="button" class="btn btn-default btn-lg btn-block">
+                                <button type="submit" class="btn btn-default btn-lg btn-block" >
                                         التسجيل
                                 </button>
                                 

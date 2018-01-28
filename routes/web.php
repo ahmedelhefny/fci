@@ -17,23 +17,16 @@ Route::get('/','HomeController@GetAll');
 
 //set complain
 Route::post('/storecomplain','HomeController@storecomplain');
-//delete slider imgs
-Route::get('/DelImpImg/{id}','HomeController@DeleteImgs');
-//delete Axes
-Route::get('/deleteAxes/{id}','HomeController@DeleteAxes');
-//delete partners
-Route::get('/deletepart/{id}','HomeController@DeleteParts');
 
 
-Route::get('/meetings', function () {
-    return view('meetings');
-});
+Route::get('/meetings', 'MeetingsController@GetAll');
 
 Route::get('/Gallery','GallaryController@getall');
 
-Route::get('/informations', function () {
-    return view('informations');
-        });
+Route::get('/informations/{id}', 'MeetingsController@GetSeminar');
+
+Route::post('/Registe/{id}','MeetingsController@StoreData');
+
 
      
 
@@ -44,7 +37,14 @@ Route::get('/informations', function () {
 
 Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 {
-    
+
+    //delete slider imgs
+    Route::get('/DelImpImg/{id}','HomeController@DeleteImgs');
+    //delete Axes
+    Route::get('/deleteAxes/{id}','HomeController@DeleteAxes');
+    //delete partners
+    Route::get('/deletepart/{id}','HomeController@DeleteParts');
+
 
 });
         

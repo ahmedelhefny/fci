@@ -168,8 +168,9 @@
       </div>
       @foreach($ImgUrl as $key=>$img)
       <div class="item">
+          @if(Auth::check()&&Auth::user()->hasRole('admin'))
           <a href="/DelImpImg/{{$img->id}}" style="position:absolute; top:2px;right:250px;">delete</a>
-          
+          @endif
            <img src="images/important imgs/{{$img->Imp_url}}" alt="">
       </div>
       
@@ -249,7 +250,9 @@
 
                 @foreach($parts as $key=> $part)
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <a href="/deletepart/{{$part->id}}"><i class="fa fa-times-circle" aria-hidden="true" style="position: relative; left: 170px; top: 19px;"></i></a>
+                    @if(Auth::check()&&Auth::user()->hasRole('admin'))
+                    <a href="/deletepart/{{$part->id}}  "><i class="fa fa-times-circle" aria-hidden="true" style="position: relative; left: 170px; top: 19px;"></i></a>
+                    @endif
                     <div class="new222">
                         <img src="images/partners imgs/{{$part->P_url}}" alt=".....">
                         <h3>{{$part->P_name}}</h3>
