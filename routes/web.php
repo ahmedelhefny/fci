@@ -28,9 +28,7 @@ Route::get('/getAllImg/{id}','GallaryController@getAllImg');
 
 
 
-Route::get('/meetings', function () {
-    return view('meetings');
-});
+Route::get('/meetings', 'MeetingsController@GetAll');
 
 Route::get('/Gallery','GallaryController@getall');
 
@@ -38,6 +36,11 @@ Route::get('/informations', function () {
     return view('informations');
         });
         
+Route::get('/informations/{id}', 'MeetingsController@GetSeminar');
+
+Route::post('/Registe/{id}','MeetingsController@StoreData');
+
+
      
 
 /*Role*/
@@ -48,6 +51,13 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 {
     Route::get('/deleteMImg/{id}','GallaryController@deleteMImg');
 
+
+    //delete slider imgs
+    Route::get('/DelImpImg/{id}','HomeController@DeleteImgs');
+    //delete Axes
+    Route::get('/deleteAxes/{id}','HomeController@DeleteAxes');
+    //delete partners
+    Route::get('/deletepart/{id}','HomeController@DeleteParts');
 
 
 });

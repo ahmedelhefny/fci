@@ -87,7 +87,7 @@
 
 
             <li>
-                <a href="#">اتصل بنا</a>
+                <a href="#contact_us">اتصل بنا</a>
             </li>
 
 

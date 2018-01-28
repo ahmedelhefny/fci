@@ -17,4 +17,9 @@ class Seminars extends Model
     {
         return $this->hasOne('App\Speakers');
     }
+
+    public function Registerations()
+    {
+        return $this->belongsToMany('App\Regiserations');
+    }
 }

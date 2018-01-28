@@ -10,7 +10,7 @@
 <!-- start footer -->
 
 
-<section class="foot">
+<section class="foot" id='contact_us'>
     <div class="container">
         <h2 class="h1 text-center wow bounce"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s">اتصل بنا</h2>
         <hr style="width:100px;height:2px;background:#fff;margin-top:-5px;">

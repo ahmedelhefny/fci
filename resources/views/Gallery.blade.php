@@ -84,7 +84,7 @@
 
 
             <li>
-                <a href="#">اتصل بنا</a>
+                <a href="#contact_us">اتصل بنا</a>
             </li>
 
 
@@ -139,11 +139,7 @@
                               <p>{{$item->SP_name}}</p>
 
 
-                                <ul class="social-icon">
-                                      <li><a href="#" class="fa fa-facebook"></a></li>
-                                      <li><a href="#" class="fa fa-twitter"></a></li>
-                                      <li><a href="#" class="fa fa-dribbble"></a></li>
-                                </ul>
+                              
                               <button onclick="window.location.href='/getAllImg/{{$item->id}}'">صور الندوة</button>
                             </div>
                             <img src="images/folder.png" class="img-responsive">
