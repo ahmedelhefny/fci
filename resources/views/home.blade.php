@@ -4,6 +4,7 @@
 <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf" value="{{ csrf_token() }}">
     <title>الملتقي الثاني لمطوري تكنولوجيا المعلومات</title>
 <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -22,6 +23,46 @@
 
 </head>
 <body>
+
+
+        <div class="main-login">
+                <div class="login">
+                    <div style="width: 100%; text-align: right;">
+                        <i id="login-close" style="margin: 7px;" class="fa fa-close"></i>
+            
+                    </div>
+                    <h2>تسجيل الدخول</h2>
+                    <div class="img-brand-form">
+                        <img src="{{asset('images/mans.png')}}">
+            
+                    </div>
+                    <form method="post" action="/login">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">البريد الالكتروني</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="البريد الالكتروني">
+                        </div>
+                        <div class="form-group ">
+                            <label for="exampleInputPassword1">الرقم السري</label>
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="الرقم السري">
+                        </div>
+                        <div class="invalid-feedback">
+                            @if($errors->any())
+                                {{$errors->first()}}
+                            @endif
+                        </div>
+            
+            
+                        <div class="checkbox">
+                            <label>
+                                <input name="checked" type="checkbox" checked>تذكرني
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </form>
+            
+                </div>
+            </div>
 
 
 
@@ -117,6 +158,35 @@
                         </div>
 
             </li>
+            @if(!Auth::check())
+            <li > 
+                    <a class='ma_login' href="#"> تسجيل الدخول</a>
+            </li>
+            @elseif(Auth::check() && Auth::user()->hasRole('admin'))
+            <li>
+                    <a href="/admin"> لوحة التحكم</a>
+
+            </li>
+            <li>
+                    <a href="/logout"> تسجيل الخروج</a>
+
+            </li>
+            @elseif(Auth::check() && Auth::user()->hasRole('anther'))
+            <li>
+                    <a href="/anther"> لوحة التحكم</a>
+
+            </li>
+            <li>
+                    <a href="/logout"> تسجيل الخروج</a>
+
+            </li>
+            @else
+            <li>
+                    <a href="/logout"> تسجيل الخروج</a>
+
+            </li>
+            @endif
+    
 
       </ul>
 

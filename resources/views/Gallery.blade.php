@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="css/bootstrap-arabic.css">
     <link rel="stylesheet" href="css/style.css">
       <script src="js/respond.min.js"></script>
+      <style>
+          html
+          {
+              overflow:auto !important;
+          }
+      </style>
 
 </head>
 <body>

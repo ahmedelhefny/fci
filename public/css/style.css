@@ -1,6 +1,4 @@
-html {
-    overflow: auto !important;
-}
+
 
 body {
     font-family: 'Mirza', cursive;
@@ -1592,3 +1590,79 @@ fixed .caption span {
 .is-invalid {
     border: 1px solid #bf4545;
 }
+
+
+/*login model*/
+.main-login
+{
+    width: 100%;
+    display: none;
+}
+.login
+{
+    width: 550px;
+height: 590px;
+background-color: #fff;
+box-shadow: -6px -2px 20px 0px #1212121a;position: fixed;
+left: 32%;
+z-index: 9999;
+top: 94px;
+color: #6781ba;
+}
+.login h2
+{
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    color: #6781ba;
+}
+.login form
+{
+    padding: 10px;
+    margin-top: 30px;
+}
+.login button
+{
+    width: 100%;
+    text-align: center;
+    border-top: 3px solid #fff;
+    color: #fff;
+    background-color: #6781ba;
+    margin-top: 20px;
+    border-radius: 0;
+    font-size: 16px;
+}
+.login button:hover,active,focus
+{
+    border-top: 3px solid #000;
+    color: #fff;
+    background-color: #000;
+}
+
+.login .img-brand-form
+{
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+.login .img-brand-form img
+{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+#login-close
+{
+    
+    color: #6781ba
+}
+
+#login-close:hover
+{
+    cursor: pointer;
+    color: #000000;
+}
+
+
+

@@ -1,4 +1,16 @@
 $(document).ready(function(){
+   
+        $('#login-close').click(function(){
+            
+            $('.main-login').hide();
+    
+        });
+
+    
+    $('.ma_login').click(function(){
+        $('.main-login').show();
+    });
+    
     
     var scoll=$("#top-scroll");
     $(window).scroll(function()
