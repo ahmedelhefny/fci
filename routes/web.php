@@ -61,18 +61,15 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
     Route::get('/deleteAxes/{id}','HomeController@DeleteAxes');
     //delete partners
     Route::get('/deletepart/{id}','HomeController@DeleteParts');
-<<<<<<< HEAD
 
     //logout
     Route::get('/logout','SessionController@destroy');
 
 
-=======
     //delete seminar
     Route::get('/DeleSem/{id}','MeetingsController@DeleSem');
     //delete img logo
     Route::get('/DeleImgLo/{id}','HomeController@DelImgLogo');
->>>>>>> 2052ca6ae7eae393bc7b65f4df4afbdc1379fa64
 
 });
         
