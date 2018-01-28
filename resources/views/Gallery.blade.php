@@ -74,7 +74,7 @@
                         <div class="dropdown1">
 
                           <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                             الندوات
+                             ندوات اليوم
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="#">السبت</a></li>
@@ -141,7 +141,7 @@
                           <div class="team-overlay">
 
 
-                              <h3>{{$item->S_name}}</h3>
+                             <a href="/informations/{{$item->Seminar_id}}" style="text-decoration: none;"> <h3>{{$item->S_name}}</h3></a>
                               <p>{{$item->SP_name}}</p>
 
 

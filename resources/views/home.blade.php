@@ -203,18 +203,20 @@
         <div class="row">
             <div class="loog">
                 <div class="col-lg-3 col-md-3">
-                    <img src="images/mans.png" alt=".....">
+                    <img src="{{asset('images/mans.png')}}" alt=".....">
                     <h2>جامعة المنصورة</h2>
                     <h4>MANSOURA<br> UNIVERSITY</h4>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div>
-                        <img src="images/meet2.jpg" style="text-align: center; width: 570px;position: relative;bottom: 70px; ">
+
+                        <img src="{{asset('images/contact_imgs/'.$ImgLog->Log_url)}}" style="text-align: center; width: 570px;position: relative;bottom: 70px; ">@if(Auth::check()&&Auth::user()->hasRole('admin'))<a href="/DeleImgLo/{{$ImgLog->id}}"><i class="fa fa-times" aria-hidden="true" style="position: absolute; top: 60px; right: 59px; color: #0D0A0A"></i></a>@endif
+
 
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3">
-                    <img src="images/mans.png" alt="......">
+                    <img src="{{asset('images/mans.png')}}" alt="......">
                     <h2>كلية حاسبات ومعلومات</h2>
                     <h4>faculty of computer<br> science and information</h4>
                 </div>
@@ -234,12 +236,12 @@
 
   <div class="carousel-inner">
       <div class="item active">
-           <img src="images/important imgs/banner4.jpg" alt="Main">
+           <img src="{{asset('images/important imgs/m2.jpg')}}" alt="Main">
       </div>
       @foreach($ImgUrl as $key=>$img)
       <div class="item">
           @if(Auth::check()&&Auth::user()->hasRole('admin'))
-          <a href="/DelImpImg/{{$img->id}}" style="position:absolute; top:2px;right:250px;">delete</a>
+          <a href="{{asset('/DelImpImg/'.$img->id)}}" style="position:absolute; top:2px;right:250px;"><i class="fa fa-times" aria-hidden="true" style=" color: #0D0A0A; background-color: #710909"></i></a>
           @endif
            <img src="images/important imgs/{{$img->Imp_url}}" alt="">
       </div>
