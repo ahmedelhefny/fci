@@ -210,7 +210,9 @@
                 <div class="col-lg-6 col-md-6">
                     <div>
 
-                        <img src="{{asset('images/contact_imgs/'.$ImgLog->Log_url)}}" style="text-align: center; width: 570px;position: relative;bottom: 70px; ">@if(Auth::check()&&Auth::user()->hasRole('admin'))<a href="/DeleImgLo/{{$ImgLog->id}}"><i class="fa fa-times" aria-hidden="true" style="position: absolute; top: 60px; right: 59px; color: #0D0A0A"></i></a>@endif
+                        <img src="{{asset('images/contact_imgs/'.$ImgLog->Log_url)}}" style="text-align: center; width: 570px;position: relative;bottom: 70px; ">
+                        @if(Auth::check()&&Auth::user()->hasRole('admin'))<a href="/DeleImgLo/{{$ImgLog->id}}"><i class="fa fa-times" aria-hidden="true" style="position: absolute; top: 60px; right: 59px; color: #0D0A0A"></i></a>@endif
+
 
 
                     </div>
