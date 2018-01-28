@@ -15,6 +15,12 @@ class HomeController extends Controller
     //set complain in database
     public function storecomplain()
     {
+        request()->validate([
+
+    		'C_content'=>'required|string',
+    		
+    		]);
+
 
         $complain=new Complain();
         $complain->C_content=\request('C_content');

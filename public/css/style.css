@@ -441,11 +441,12 @@ a:not([href]):not([tabindex]) {
 }
 
 .foot .fot textarea {
-    height: 60px;
+    height: 96px;
     border-radius: 5px;
     outline: 0;
-    background: rgba(115, 128, 138, 0.08);
+    background: white;
     display: block;
+    font-size: 17px;
 }
 
 .foot .fot .btn {
@@ -1577,4 +1578,13 @@ fixed .caption span {
 .img_d {
     position: relative;
     left: 50px;
+}
+
+.invalid-feedback {
+    color: #bf4545;
+    padding: 2px;
+}
+
+.is-invalid {
+    border: 1px solid #bf4545;
 }

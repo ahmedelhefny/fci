@@ -23,6 +23,9 @@ Route::get('/DelImpImg/{id}','HomeController@DeleteImgs');
 Route::get('/deleteAxes/{id}','HomeController@DeleteAxes');
 //delete partners
 Route::get('/deletepart/{id}','HomeController@DeleteParts');
+//directe to img of seminer
+Route::get('/getAllImg/{id}','GallaryController@getAllImg');
+
 
 
 Route::get('/meetings', function () {
@@ -34,9 +37,8 @@ Route::get('/Gallery','GallaryController@getall');
 Route::get('/informations', function () {
     return view('informations');
         });
-
+        
      
-
 
 /*Role*/
 
@@ -44,7 +46,9 @@ Route::get('/informations', function () {
 
 Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 {
-    
+    Route::get('/deleteMImg/{id}','GallaryController@deleteMImg');
+
+
 
 });
         

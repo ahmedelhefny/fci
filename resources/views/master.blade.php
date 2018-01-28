@@ -38,7 +38,13 @@
                     <h3>الشكاوي</h3>
                     <form  method="post" action="/storecomplain" >
                         {{csrf_field()}}
-                    <textarea placeholder="...." name="C_content" id="content"></textarea>
+                    <textarea placeholder="...." name="C_content" id="content" class="complain  @if ($errors->has('C_content'))  {{'is-invalid'}} @endif"></textarea>
+                    <div class="invalid-feedback">
+                            @foreach ($errors->get('C_content') as $message)
+                                {{$message}}
+                            @endforeach
+                        </div>
+                    
                     <button type="submit" class="btn btn-primary"   >ارسال</button>
                     </form>
                 </div>
@@ -70,7 +76,7 @@
 <div class="log text-center">
     <div class="container">
         <div class="loog">
-            <img src="images/mans.png">
+            <img src="{{asset('images/mans.png')}}">
             <h2 class="h1">جامعة المنصورة</h2>
             <div class="copy">
                 <div class="copy1 text-center">تحت رعاية © <strong>رئيس جامعة المنصورة </strong>وريادة</div>
@@ -81,7 +87,7 @@
 </div>
 
 <!----------------------------------------------------->
-<img src="images/arrow.png" id="top-scroll">
+<img src="{{asset('images/arrow.png')}}" id="top-scroll">
 @yield('body')
 
 

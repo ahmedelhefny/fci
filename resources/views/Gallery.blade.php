@@ -144,7 +144,7 @@
                                       <li><a href="#" class="fa fa-twitter"></a></li>
                                       <li><a href="#" class="fa fa-dribbble"></a></li>
                                 </ul>
-                              <button onclick="document.getElementById('id01').style.display='block'">صور الندوة</button>
+                              <button onclick="window.location.href='/getAllImg/{{$item->id}}'">صور الندوة</button>
                             </div>
                             <img src="images/folder.png" class="img-responsive">
                             <div class="team-overlay-show">
