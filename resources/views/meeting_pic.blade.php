@@ -120,7 +120,7 @@
 
 
 <!-- The Modal -->
-<h2  > {{$S_name->S_name}} </h2>
+<a href="/informations/{{$S_name->id}}" style="text-decoration: none"><h2  > {{$S_name->S_name}} </h2></a>
 <div class='container' style='margin-bottom:50px;'>
 
 

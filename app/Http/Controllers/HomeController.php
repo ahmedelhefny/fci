@@ -36,7 +36,8 @@ class HomeController extends Controller
         $parts=DB::table('partners')->get();
         $axes=DB::table('axes')->get();
         $ImgUrl=DB::table('impimgs')->get();
-        return view('home',compact('ImgUrl','axes','parts'));
+        $ImgLog=DB::table('contacts')->first();
+        return view('home',compact('ImgUrl','axes','parts','ImgLog'));
     }
 
     //delete slider imgs
@@ -61,6 +62,15 @@ class HomeController extends Controller
     {
         DB::table('partners')
             ->where('id',$id)
+            ->delete();
+        return redirect()->back();
+    }
+
+    //delete Image logo
+    public function DelImgLogo($id)
+    {
+        DB::table('contacts')
+            ->where('id','=',$id)
             ->delete();
         return redirect()->back();
     }

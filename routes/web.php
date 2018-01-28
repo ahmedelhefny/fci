@@ -41,7 +41,7 @@ Route::get('/informations/{id}', 'MeetingsController@GetSeminar');
 Route::post('/Registe/{id}','MeetingsController@StoreData');
 
 
-     
+
 
 /*Role*/
 
@@ -58,7 +58,10 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
     Route::get('/deleteAxes/{id}','HomeController@DeleteAxes');
     //delete partners
     Route::get('/deletepart/{id}','HomeController@DeleteParts');
-
+    //delete seminar
+    Route::get('/DeleSem/{id}','MeetingsController@DeleSem');
+    //delete img logo
+    Route::get('/DeleImgLo/{id}','HomeController@DelImgLogo');
 
 });
         

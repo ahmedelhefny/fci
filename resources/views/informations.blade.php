@@ -142,7 +142,7 @@
                 <a href="/getAllImg/{{$AllData->id}}"><h4><i class="fa fa-picture-o"></i> جميع صور الندوة</h4></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h4><i class="fa fa-clock-o"></i> From:{{$AllData->S_start}} To:{{$AllData->S_end}}</h4>
+                <h4><i class="fa fa-clock-o"></i> From:{{$AllData->S_start}}  - To:{{$AllData->S_end}}</h4>
             </div>
             
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -155,15 +155,6 @@
                 <h4><i class="fa fa-map-marker"></i> at FCI University</h4> 
             </div>
 
-
-            <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
-                ,ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
-
-                --------------------------------------
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
-                ,ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt. Lorem ipsum dolor sit amet
-                -->
-            
             
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h5>عن الندوة</h5><i class="fa fa-chevron-down"></i><br>
@@ -205,21 +196,41 @@
                             <div class="col-md-offset-2 col-md-8">
                                 
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-lg" placeholder="الاسم" name="name">
+                                    <input type="text" name="name" class="form-control input-lg @if ($errors->has('name'))  {{'is-invalid'}} @endif" placeholder="الاسم" >
+                                    <div class="invalid-feedback">
+                                        @foreach ($errors->get('name') as $message)
+                                            {{$message}}
+                                        @endforeach
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-lg"
-                                                  placeholder="اسم الكليه" name="faculty">
+                                    <input type="text" name="faculty" class="form-control input-lg @if ($errors->has('faculty'))  {{'is-invalid'}} @endif"
+                                                  placeholder="اسم الكليه" >
+                                    <div class="invalid-feedback">
+                                        @foreach ($errors->get('faculty') as $message)
+                                            {{$message}}
+                                        @endforeach
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-lg"
-                                                  placeholder="الفرقه " name="level">
+                                    <input type="text" name="level" class="form-control input-lg @if ($errors->has('level'))  {{'is-invalid'}} @endif"
+                                                  placeholder="الفرقه " >
+                                    <div class="invalid-feedback">
+                                        @foreach ($errors->get('level') as $message)
+                                            {{$message}}
+                                        @endforeach
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-lg"
-                                           placeholder="القسم " name="dept">
+                                    <input type="text" name="dept" class="form-control input-lg @if ($errors->has('dept'))  {{'is-invalid'}} @endif"
+                                           placeholder="القسم " >
+                                    <div class="invalid-feedback">
+                                        @foreach ($errors->get('dept') as $message)
+                                            {{$message}}
+                                        @endforeach
+                                    </div>
                                 </div>
 
 

@@ -28,26 +28,70 @@ class MeetingsController extends Controller
 
     public function StoreData($id)
     {
-        request()->validate([
 
-            'R_name'=>'required|string',
-            'R_faculty'=>'required|string',
-    		'R_level'=>'required|string',
-    		'R_depts'=>'required|string',
+        $Num=DB::table('regiserations')
+            ->where('regiserations.seminar_id','=',$id)
+            ->count();
+        $location="";
+        $chair=0;
+        if ($Num ==0 || $Num <681 ) {
 
-    		
-    		]);
+            if ($Num + 1 > 0 || $Num + 1 < 231) {
+                $location = "مدرج 1";
+                $chair = $Num + 21;
 
-        $registe=new Regiserations();
-        $registe->R_name=\request('name');
-        $registe->R_faculty=\request('faculty');
-        $registe->R_level=\request('level');
-        $registe->R_depts=\request('dept');
+            } elseif ($Num + 1 > 230 || $Num + 1 < 481) {
+                $location = "مدرج 2";
+                $chair = ($Num + 1) - 230;
 
-        $registe->seminar_id=$id;
-        $registe->save();
+            } elseif ($Num + 1 > 480 || $Num + 1 < 681) {
+                $location = "مدرج 3";
+                $chair = ($Num + 1) - 480;
+            }
 
-        return back();
+            $registe = new Regiserations();
+            $registe->R_name = \request('name');
+            $registe->R_faculty = \request('faculty');
+            $registe->R_level = \request('level');
+            $registe->R_depts = \request('dept');
+
+            $registe->seminar_id = $id;
+            $registe->R_location=$location . "مقعد رقم" . $chair;
+            $registe->save();
+
+            return view('confirm',compact('location','chair'));
+        }
+
+        else
+        {
+            $sorry="كل المدرجات قد امتلأت نأسف لانك لن تستطيع التسجيل او الحضور";
+            return view('confirm',compact('sorry'));
+        }
+
+
+
+
+
     }
 
+    public function DeleSem($id)
+    {
+        DB::table('speakers')
+            ->where('Seminar_id','=',$id)
+            ->delete();
+
+        DB::table('seminar_imgs')
+            ->where('Seminar_id','=',$id)
+            ->delete();
+
+        DB::table('regiserations')
+            ->where('seminar_id','=',$id)
+            ->delete();
+
+        DB::table('seminars')
+            ->where('seminars.id','=',$id)
+            ->delete();
+
+        return redirect()->back();
+    }
 }
