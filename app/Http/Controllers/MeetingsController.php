@@ -26,16 +26,14 @@ class MeetingsController extends Controller
 
     public function GetSeminar($id)
     {
-
-        $Ss=DB::table('seminars')
-            ->where('S_date','=',date('Y-m-d',time()))
-            ->get();
-
+        $SDay=DB::table('seminars')
+        ->where('S_date','=',date('Y-m-d',time()))
+        ->get();
         $AllData =DB::table('seminars')
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
             ->where('seminars.id','=',$id)
             ->first();
-        return view('informations' , compact('AllData','Ss'));
+        return view('informations' , compact('AllData','SDay'));
     }
 
     public function StoreData($id)
@@ -61,12 +59,12 @@ class MeetingsController extends Controller
                 $chair = ($Num + 1) - 480;
             }
             \request()->validate([
-                'R_name'=>'require|string',
-                'R_faculty'=>'require|string',
+                'name'=>'required|string',
+                'faculty'=>'required|string',
 
-                'R_level'=>'require|string',
+                'level'=>'required|string',
 
-                'R_depts'=>'require|string',
+                'dept'=>'nullable|string',
 
 
             ]);
@@ -102,7 +100,10 @@ class MeetingsController extends Controller
     public function PassId($id)
     {
         $S_id=$id;
-        return view('survey', compact('S_id'));
+        $SDay=DB::table('seminars')
+        ->where('S_date','=',date('Y-m-d',time()))
+        ->get();
+        return view('survey', compact('S_id','SDay'));
     }
 
     public function DeleSem($id)

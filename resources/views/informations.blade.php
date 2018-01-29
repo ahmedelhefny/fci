@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/hover.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/hover-min.css')}}">
     <link rel="stylesheet" href="{{asset('css/demo-page.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
@@ -67,20 +66,19 @@
 
 
             <li>
-                        <div class="dropdown1">
+                <div class="dropdown1">
 
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                             ندوات اليوم
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            @foreach($Ss as $key=>$s)
-                            <li><a href="/informations/{{$s->id}}">{{$s->S_name}}</a></li>
-                                @endforeach
-                          </ul>
-                        </div>
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                     ندوات اليوم
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      @foreach($SDay as $key=>$sday)
+                    <li><a href="/informations/{{$sday->id}}">{{$sday->S_name}}</a></li>
+                          @endforeach
+                  </ul>
+                </div>
 
-            </li>
-
+    </li>
           <li>
               <a href="/Gallery">صور الندوات</a>
           </li>

@@ -44,8 +44,7 @@ class HomeController extends Controller
         ->orderBy('Year','desc')
         ->get();
 
-        return view('home',compact('ImgUrl','axes','parts','ImgLog','allMeetings'));
-        return view('home',compact('ImgUrl','axes','parts','ImgLog','SDay'));
+        return view('home',compact('ImgUrl','axes','parts','ImgLog','allMeetings','SDay'));
 
     }
 

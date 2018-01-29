@@ -4,12 +4,13 @@
     <meta name="description" charset="utf-8">
     <title>virifcation</title>
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-arabic.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/7fny.css')}}">
-
+    
 
 </head>
-<body>
+<body style="direction: ltr;"></body>
 <div>
 
 
@@ -18,8 +19,9 @@
         <center><img src="{{asset('images/smile.png')}}" alt="correct"></center><br>
         <label class="a"><i class="fa fa-smile-o fa-2x " aria-hidden="true" style="color: #31b0d5">  your registration is Done .. </i></label><br>
 
-        <label class="a"> <i class="fa fa-university" aria-hidden="true" style="color: #31b0d5">  </i>  Your place in <h2 style="color: #31b0d5">{{$location}}</h2> </label>
-        <label class="c"> <i class="fa fa-map-marker" aria-hidden="true" style="color: #31b0d5"></i>  the seat number <h2 style="color: #31b0d5">{{$chair}}</h2>   </label>
+        <label class="a"> <i class="fa fa-university" aria-hidden="true" style="color: #31b0d5">  </i>  Your place in :{{$location}}</label>
+        <br>
+        <label class="c"> <i class="fa fa-map-marker" aria-hidden="true" style="color: #31b0d5"></i>  the seat number :{{$chair}}   </label><br>
         <a href="/"><button type="button" class="btn btn-primary" style="background-color: #31b0d5">Home Page</button></a>
 
     @endif

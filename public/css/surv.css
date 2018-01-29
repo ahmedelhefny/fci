@@ -1,45 +1,33 @@
 body
 {
 font-family: 'Mirza', cursive;
- color: #333;
+ color: #333333;
+ text-align: center;
+ font-size: 18px;
+
 }
 
 /** start main-Q**/
-   
-
-}
-.quation .text p{
-    margin: auto;
-}
-.div-pragr{
-    padding: 15px 0px 7px 0px;
-    font-size: 15px;
-}
-.btn{
-    padding: 6px;
-    padding-right: 55px;
-    padding-left: 55px;
-    margin-left: 50px;
- 
-}
-.div-pragr ol li{
-    padding-bottom: 6px;
+.main_s
+{
+    margin-bottom: 50px;
+    margin-top:40px; 
+}   
+h2
+{
+    color: #638ec2;
+    font-size: 36px;
+    margin-bottom:20px; 
+    
 }
 
-.smalle{
-    background: #2f2f2f;
-}
-.btn {
-    width: 100%;
-    font-size: 16px;
-}
-.dropdown-menu{
-    width: 100%;
-    margin-bottom: 20px;
-}
-span{
-    font-size: 18px;
-}
+p
+{
+    font-size: 25px;
+    margin-bottom:45px; 
 
-
-/** end main-Q**/
+}
+thead
+{
+    background: #638ec2;
+}
