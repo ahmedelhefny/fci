@@ -44,7 +44,9 @@ class HomeController extends Controller
         ->orderBy('Year','desc')
         ->get();
 
-        return view('home',compact('ImgUrl','axes','parts','ImgLog','allMeetings','SDay'));
+        $contact=DB::table('contactUs')->first();
+
+        return view('home',compact('ImgUrl','axes','parts','ImgLog','allMeetings','SDay','contact'));
 
     }
 
@@ -93,5 +95,24 @@ class HomeController extends Controller
             ->get();
         return view('meetings',compact('SData'));
     }
+
+
+    //contact edit
+    public function uEdit()
+    {
+        DB::table('contactUs')->where('id',\request('id'))
+        ->update(['email1' => \request('email1'),'email2' => \request('email2'),'num1' => \request('num1')]);
+        return back();
+
+    }
+
+    public function cEdit()
+    {
+        DB::table('contactUs')->where('id',\request('id'))
+        ->update(['email3' => \request('email3'),'email4' => \request('email4'),'num2' => \request('num2')]);
+        return back();
+
+    }
+
 
 }

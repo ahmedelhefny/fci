@@ -1,4 +1,34 @@
 $(document).ready(function(){
+
+
+    /*footer
+    */
+
+    $('#btn-edit-u').click(function () {
+        $('#ul-u').hide();
+        $('#form-u').show();
+     
+     });
+     
+     $('#btn-cancel-u').click(function () {
+        $('#ul-u').show();
+        $('#form-u').hide();
+     
+     });
+     
+     $('#btn-edit-c').click(function () {
+        $('#ul-c').hide();
+        $('#form-c').show();
+     
+     });
+     
+     $('#btn-cancel-c').click(function () {
+        $('#ul-c').show();
+        $('#form-c').hide();
+     
+     });
+
+     //end footer
    
         $('#login-close').click(function(){
             
@@ -148,3 +178,4 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+

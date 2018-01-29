@@ -13,6 +13,7 @@
 
 Route::get('/','HomeController@GetAll');
 
+
 //set complain
 Route::post('/storecomplain','HomeController@storecomplain');
 
@@ -34,6 +35,14 @@ Route::post('/login','SessionController@A');
 //archive
 
 Route::get('/Seminers/{date}','HomeController@gatArchive');
+
+Route::post('/uEdit','HomeController@uEdit');
+Route::post('/cEdit','HomeController@cEdit');
+
+Route::get('/admin',function(){
+    return view('admin');
+});
+
 
 
 

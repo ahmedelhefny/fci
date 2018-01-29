@@ -18,21 +18,64 @@
             <div class="footer">
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
 
-                    <ul>
-                        <h3>اتحاد الكلية</h3>
-                        <a href="#"><li> <i class="fa fa-envelope"></i> al_faisal_989@hotmail.com</li></a><br>
-                        <a href="#"><li> <i class="fa fa-envelope"></i> al_faisal_989@hotmail.com</li></a><br>
-                        <a href="#"><li><i class="fa fa-phone"></i> +1704-957-7624</li></a>
+                    <ul id='ul-u'>
+                        <h3 style='margin-right:13px;'>اتحاد الكلية</h3>
+                        <a href="#"><li> <i class="fa fa-envelope"></i> {{$contact->email1}}</li></a><br>
+                        <a href="#"><li> <i class="fa fa-envelope"></i> {{$contact->email2}}</li></a><br>
+                        <a href="#"><li><i class="fa fa-phone"></i> {{$contact->num1}} </li></a>
+                        <br>
+                        <button style='margin-right:9px;' class="btn btn-danger" id="btn-edit-u">edit</button>
+
+                        <!--@if(Auth::check()&&Auth::user()->hasRole('admin'))-->
+
+                    <!--@endif-->
                     </ul>
+
+
+                    <form method="post" id='form-u' action="/uEdit">
+                        <h3>اتحاد الكلية</h3>
+
+                        {{csrf_field()}}
+                        <div class="text-footer"><i class="fa fa-envelope icon-footer"></i><input name="email1" type="text" class="form-control" value="{{old('email1', $contact->email1)}}" ></div>
+                        <div class="text-footer"><i class="fa fa-envelope icon-footer"></i><input name="email2" type="text" class="form-control" value="{{old('email2', $contact->email2)}}" ></div>
+                        <div class="text-footer"><i class="fa fa-phone icon-footer"></i><input name="num1" type="text" class="form-control" value="{{old('num1', $contact->num1)}}" ></div>
+                        <input type="hidden" name="id" value="{{$contact->id}}">
+
+                        <button style='margin-right:24px;' type="submit"  class="btn btn-primary">Update</button>
+                        <input type="button" class="btn btn-danger" id="btn-cancel-u" value="Cancel">
+
+
+                    </form>
+
                 </div>
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
 
-                    <ul>
-                        <h3>الاتصال العام</h3>
-                        <a href="#"><li> <i class="fa fa-envelope"></i> al_faisal_989@hotmail.com</li></a><br>
-                        <a href="#"><li> <i class="fa fa-envelope"></i> al_faisal_989@hotmail.com</li></a><br>
-                        <a href="#"><li><i class="fa fa-phone"></i> +966 503534660</li></a>
+                    <ul id='ul-c'>
+                        <h3 style='margin-right:13px;'>الاتصال العام</h3>
+                        <a href="#"><li> <i class="fa fa-envelope"></i> {{$contact->email3}}</li></a><br>
+                        <a href="#"><li> <i class="fa fa-envelope"></i>{{$contact->email4}}</li></a><br>
+                        <a href="#"><li><i class="fa fa-phone"></i> {{$contact->num2}}</li></a>
+                        <br>
+
+                        <button style='margin-right:9px;' class="btn btn-danger" id="btn-edit-c">edit</button>
+
                     </ul>
+
+                    <form method="post" id='form-c' action="/cEdit">
+                        <h3>الاتصال العام</h3>
+
+                        {{csrf_field()}}
+                        <div class="text-footer"><i class="fa fa-envelope icon-footer"></i><input name="email3" type="text" class="form-control" value="{{old('email3', $contact->email3)}}" ></div>
+                        <div class="text-footer"><i class="fa fa-envelope icon-footer"></i><input name="email4" type="text" class="form-control" value="{{old('email4', $contact->email4)}}" ></div>
+                        <div class="text-footer"><i class="fa fa-phone icon-footer"></i><input name="num2" type="text" class="form-control" value="{{old('num2', $contact->num2)}}" ></div>
+                        <input type="hidden" name="id" value="{{$contact->id}}">
+
+                        <button style='margin-right:24px;' type="submit"  class="btn btn-primary">Update</button>
+                        <input type="button" class="btn btn-danger" id="btn-cancel-c" value="Cancel">
+
+
+                    </form>
+
                 </div>
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <h3>الشكاوي</h3>
@@ -89,5 +132,8 @@
 <!----------------------------------------------------->
 <img src="{{asset('images/arrow.png')}}" id="top-scroll">
 @yield('body')
+
+    
+
 
 

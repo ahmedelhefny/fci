@@ -1665,4 +1665,45 @@ color: #6781ba;
 }
 
 
+/*footer*/
+
+#form-u,#form-c
+{
+    display: none;
+    margin-top: 30px;
+
+}
+
+.text-footer
+{
+    color: rgb(117, 128, 134);
+font-size: 13px;
+line-height: 2;
+display: inline-flex;
+font-family: 'Roboto', sans-serif;
+padding: 10px 0 10px 0;
+
+}
+.text-footer i
+{
+    font-size: 16px;
+    background: none;
+    color: #20b6e7;
+    display: inline-block;
+    line-height: 32px;
+}
+
+.text-footer input
+{
+    margin-right:10px; 
+}
+
+
+
+
+
+
+
+
+
 
