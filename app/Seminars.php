@@ -22,4 +22,9 @@ class Seminars extends Model
     {
         return $this->belongsToMany('App\Regiserations');
     }
+
+    public function feedback()
+    {
+        return $this->hasOne('App\Feedback');
+    }
 }

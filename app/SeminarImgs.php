@@ -10,6 +10,6 @@ class SeminarImgs extends Model
 
     public function seminar()
     {
-        $this->belongsTo('App\Seminars');
+        $this->belongsToMany('App\Seminars');
     }
 }

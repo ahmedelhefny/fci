@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
 use App\Regiserations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Null_;
+use phpDocumentor\Reflection\Types\Nullable;
 
 class MeetingsController extends Controller
 {
@@ -124,6 +127,22 @@ class MeetingsController extends Controller
             ->where('seminars.id','=',$id)
             ->delete();
 
+
+    }
+
+    public function StorSur($id)
+    {
+        $feed=new Feedback();
+
+        $feed->Q1=\request('momtaz1');
+        $feed->Q2=\request('momtaz_2');
+        $feed->Q3=\request('momtaz_3');
+        $feed->Q4=\request('momtaz_4');
+        $feed->Q5=\request('momtaz_5');
+        $feed->Q6=\request('momtaz_6');
+        $feed->Q7=\request('momtaz_7');
+        $feed->seminar_id=$id;
+        $feed->save();
         return redirect()->back();
     }
 }

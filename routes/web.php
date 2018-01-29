@@ -44,6 +44,8 @@ Route::get('/admin',function(){
 });
 
 
+//set survey
+Route::post('/StorSur/{id}','MeetingsController@StorSur');
 
 
 
