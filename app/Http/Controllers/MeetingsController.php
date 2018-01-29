@@ -11,21 +11,31 @@ class MeetingsController extends Controller
     //get all seminars
     public function GetAll()
     {
+
+        $day=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
         $SData=DB::table('seminars')
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
             ->whereYear('S_date', '=', date('Y'))
 
             ->get();
-        return view('meetings',compact('SData'));
+        return view('meetings',compact('SData' ,'day'));
     }
 
     public function GetSeminar($id)
     {
+
+        $Ss=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
         $AllData =DB::table('seminars')
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
             ->where('seminars.id','=',$id)
             ->first();
-        return view('informations' , compact('AllData'));
+        return view('informations' , compact('AllData','Ss'));
     }
 
     public function StoreData($id)
@@ -78,14 +88,21 @@ class MeetingsController extends Controller
 
         else
         {
-            $sorry="كل المدرجات قد امتلأت نأسف لانك لن تستطيع التسجيل او الحضور";
-            return view('confirm',compact('sorry'));
+            $location="كل المدرجات قد امتلأت نأسف لانك لن تستطيع التسجيل او الحضور";
+            $chair=0;
+            return view('confirm',compact('location','chair'));
         }
 
 
 
 
 
+    }
+
+    public function PassId($id)
+    {
+        $S_id=$id;
+        return view('survey', compact('S_id'));
     }
 
     public function DeleSem($id)

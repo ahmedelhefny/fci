@@ -33,6 +33,9 @@ class HomeController extends Controller
     //get All to home page
     public function GetAll()
     {
+        $SDay=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
         $parts=DB::table('partners')->get();
         $axes=DB::table('axes')->get();
         $ImgUrl=DB::table('impimgs')->get();
@@ -42,6 +45,8 @@ class HomeController extends Controller
         ->get();
 
         return view('home',compact('ImgUrl','axes','parts','ImgLog','allMeetings'));
+        return view('home',compact('ImgUrl','axes','parts','ImgLog','SDay'));
+
     }
 
     //delete slider imgs

@@ -1,0 +1,27 @@
+div
+{
+   
+      text-align: center;
+  
+    background-color:#fff;
+      margin: 50px
+    
+}
+h1{
+    display:inline;
+    font-size: 50px;
+   
+}
+.a,.b,.c 
+{
+    font-family:arial;
+    font-size: 15px;
+    color: #474747;
+line-height: 70px;
+    
+}
+a{
+     font-family:arial;
+    font-size: 15px;
+    color:#88EED5; 
+}
