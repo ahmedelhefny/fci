@@ -13,38 +13,23 @@
 
 Route::get('/','HomeController@GetAll');
 
-
-
 //set complain
 Route::post('/storecomplain','HomeController@storecomplain');
-//delete slider imgs
-Route::get('/DelImpImg/{id}','HomeController@DeleteImgs');
-//delete Axes
-Route::get('/deleteAxes/{id}','HomeController@DeleteAxes');
-//delete partners
-Route::get('/deletepart/{id}','HomeController@DeleteParts');
+
 //directe to img of seminer
 Route::get('/getAllImg/{id}','GallaryController@getAllImg');
-
-
 
 Route::get('/meetings', 'MeetingsController@GetAll');
 
 Route::get('/Gallery','GallaryController@getall');
 
-Route::get('/informations', function () {
-    return view('informations');
-        });
+Route::get('/survey/{id}', 'MeetingsController@PassId');
         
 Route::get('/informations/{id}', 'MeetingsController@GetSeminar');
 
 Route::post('/Registe/{id}','MeetingsController@StoreData');
 //login
 Route::post('/login','SessionController@A');
-
-
-
-
 
 /*Role*/
 
@@ -53,7 +38,6 @@ Route::post('/login','SessionController@A');
 Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 {
     Route::get('/deleteMImg/{id}','GallaryController@deleteMImg');
-
 
     //delete slider imgs
     Route::get('/DelImpImg/{id}','HomeController@DeleteImgs');

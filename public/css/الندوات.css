@@ -1,0 +1,31 @@
+.thumbnail{
+   max-height:565px;
+    min-height: 565px;
+}
+.thumbnail img{
+    width: 360px;
+    height: 230px;
+}
+.thumbnail .imag1{
+    margin-bottom: 0px;
+}
+.caption span
+{
+ font-size: 14px;
+    padding-right: 10px;
+}
+.caption i{
+    margin-bottom: 10px;
+    font-size: 18px
+}
+.English{
+    direction: ltr;
+}
+.caption h3
+{
+    color: #048b8ce8;
+    text-decoration: underline;
+}
+.btn-primary{
+    
+}

@@ -73,12 +73,9 @@
                              ندوات اليوم
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">السبت</a></li>
-                            <li><a href="#">الأحد</a></li>
-                            <li><a href="#">الاثنين</a></li>
-                            <li><a href="#">الثلاثاء</a></li>
-                            <li><a href="#">الأربعاء</a></li>
-                            <li><a href="#">الخميس</a></li>
+                            @foreach($Ss as $key=>$s)
+                            <li><a href="/informations/{{$s->id}}">{{$s->S_name}}</a></li>
+                                @endforeach
                           </ul>
                         </div>
 
@@ -146,7 +143,7 @@
             </div>
             
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="#"><h4><i class="fa fa-plus"></i>رأيك في الندوة</h4></a>
+                <a href="/survey/{{$AllData->Seminar_id}}"><h4><i class="fa fa-plus"></i>رأيك في الندوة</h4></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <h4><i class="fa fa-calendar-plus-o"></i> {{$AllData->S_date}}</h4>

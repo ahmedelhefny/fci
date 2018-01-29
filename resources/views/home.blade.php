@@ -124,12 +124,9 @@
                              ندوات اليوم
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#sat">السبت</a></li>
-                            <li><a href="#">الأحد</a></li>
-                            <li><a href="#">الاثنين</a></li>
-                            <li><a href="#">الثلاثاء</a></li>
-                            <li><a href="#">الأربعاء</a></li>
-                            <li><a href="#">الخميس</a></li>
+                              @foreach($SDay as $key=>$sday)
+                            <li><a href="/informations/{{$sday->id}}">{{$sday->S_name}}</a></li>
+                                  @endforeach
                           </ul>
                         </div>
 
@@ -274,11 +271,10 @@
     
     
  <div class="row">
-     
-     <a href="#"><div class="t2 col-sm-4 col-xs-4"><h3>اسم الندوة</h3><p class="lead">محتوي الندوة</p></div></a>
-     <a href="#"><div class="t2 col-sm-4 col-xs-4"><h3>اسم الندوة</h3><p class="lead">محتوي الندوة</p></div></a>
-     <a href="#"><div class="t3 col-sm-4 col-xs-4"><h3>اسم الندوة</h3><p class="lead">محتوي الندوة</p></div></a>
-</div>   
+     @foreach($SDay as $key=>$i)
+     <a href="/informations/{{$i->id}}"><div class="t2 col-sm-4 col-xs-4"><h3>{{$i->S_name}} </h3><p class="lead"> {{$i->S_content}}</p></div></a>
+    @endforeach
+ </div>
     </div>
 </section>  
 

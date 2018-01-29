@@ -77,12 +77,9 @@
                              ندوات اليوم
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">السبت</a></li>
-                            <li><a href="#">الأحد</a></li>
-                            <li><a href="#">الاثنين</a></li>
-                            <li><a href="#">الثلاثاء</a></li>
-                            <li><a href="#">الأربعاء</a></li>
-                            <li><a href="#">الخميس</a></li>
+                                @foreach($daY as $key=>$A)
+                            <li><a href="/informations/{{$A->id}}">{{$A->S_name}}</a></li>
+                                    @endforeach
                           </ul>
                         </div>
 
