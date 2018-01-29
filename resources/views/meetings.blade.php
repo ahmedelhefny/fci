@@ -5,15 +5,24 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>الندوات</title>
+    
+
+
+
+
     <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/hover-min.css">
-    <link rel="stylesheet" href="css/demo-page.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/bootstrap-arabic.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/hover-min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+  
+    <link rel="stylesheet" href="{{asset('css/demo-page.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/bootstrap-arabic.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
+    <script src="{{asset('js/respond.min.js')}}"></script>
+
+
     <!-- [if lt IE9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.js"></script>
@@ -156,16 +165,14 @@
 @section('body')
     
     
-
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-arabic.js')}}"></script>
+<script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>   
+<script src="{{asset('js/popper.min.js')}}"></script>
     
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap-arabic.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/wow.min.js"></script> 
-    <script>new WOW().init();</script>  
-    <script src="js/jquery.nicescroll.min.js"></script>   
-    <script src="js/owl.carousel.min.js"></script>
+<script src="{{asset('js/plugins.js')}}"></script>
+<script src="{{asset('js/wow.min.js')}}"></script> 
+<script>new WOW().init();</script>  
     @stop
 </body>
 </html>

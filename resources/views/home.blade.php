@@ -152,8 +152,11 @@
                             الملتقيات السابقة
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">ملتقي 2017</a></li>
-                            <li><a href="#">ملتقي 2016</a></li>
+                              @foreach($allMeetings as $a)
+                              @if($a->Year!=date('Y',time()))
+                            <li><a href="/Seminers/{{$a->Year}}">ملتقي {{$a->Year}}</a></li>
+                            @endif
+                            @endforeach
                           </ul>
                         </div>
 

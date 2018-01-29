@@ -196,7 +196,7 @@
                             <div class="col-md-offset-2 col-md-8">
                                 
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control input-lg @if ($errors->has('name'))  {{'is-invalid'}} @endif" placeholder="الاسم" >
+                                    <input type="text" name="name" class="form-control input-lg @if ($errors->has('name'))  {{'is-invalid'}} @endif" placeholder="الاسم" required>
                                     <div class="invalid-feedback">
                                         @foreach ($errors->get('name') as $message)
                                             {{$message}}
@@ -206,7 +206,7 @@
 
                                 <div class="form-group">
                                     <input type="text" name="faculty" class="form-control input-lg @if ($errors->has('faculty'))  {{'is-invalid'}} @endif"
-                                                  placeholder="اسم الكليه" >
+                                                  placeholder="اسم الكليه" required>
                                     <div class="invalid-feedback">
                                         @foreach ($errors->get('faculty') as $message)
                                             {{$message}}
@@ -215,7 +215,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="level" class="form-control input-lg @if ($errors->has('level'))  {{'is-invalid'}} @endif"
-                                                  placeholder="الفرقه " >
+                                                  placeholder="الفرقه " required>
                                     <div class="invalid-feedback">
                                         @foreach ($errors->get('level') as $message)
                                             {{$message}}

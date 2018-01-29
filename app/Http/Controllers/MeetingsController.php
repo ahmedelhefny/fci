@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class MeetingsController extends Controller
 {
-    //
+    //get all seminars
     public function GetAll()
     {
         $SData=DB::table('seminars')
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
+            ->whereYear('S_date', '=', date('Y'))
+
             ->get();
         return view('meetings',compact('SData'));
     }
@@ -48,6 +50,16 @@ class MeetingsController extends Controller
                 $location = "مدرج 3";
                 $chair = ($Num + 1) - 480;
             }
+            \request()->validate([
+                'R_name'=>'require|string',
+                'R_faculty'=>'require|string',
+
+                'R_level'=>'require|string',
+
+                'R_depts'=>'require|string',
+
+
+            ]);
 
             $registe = new Regiserations();
             $registe->R_name = \request('name');
@@ -57,6 +69,8 @@ class MeetingsController extends Controller
 
             $registe->seminar_id = $id;
             $registe->R_location=$location . "مقعد رقم" . $chair;
+            $registe->r_id=$chair;
+
             $registe->save();
 
             return view('confirm',compact('location','chair'));

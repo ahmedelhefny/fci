@@ -42,6 +42,9 @@ Route::post('/Registe/{id}','MeetingsController@StoreData');
 //login
 Route::post('/login','SessionController@A');
 
+//archive
+
+Route::get('/Seminers/{date}','HomeController@gatArchive');
 
 
 

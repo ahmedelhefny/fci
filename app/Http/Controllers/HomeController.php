@@ -30,14 +30,18 @@ class HomeController extends Controller
     }
 
 
-    //get important gallery to slider
+    //get All to home page
     public function GetAll()
     {
         $parts=DB::table('partners')->get();
         $axes=DB::table('axes')->get();
         $ImgUrl=DB::table('impimgs')->get();
         $ImgLog=DB::table('contacts')->first();
-        return view('home',compact('ImgUrl','axes','parts','ImgLog'));
+        $allMeetings=DB::table('AllMeeting')
+        ->orderBy('Year','desc')
+        ->get();
+
+        return view('home',compact('ImgUrl','axes','parts','ImgLog','allMeetings'));
     }
 
     //delete slider imgs
@@ -73,6 +77,17 @@ class HomeController extends Controller
             ->where('id','=',$id)
             ->delete();
         return redirect()->back();
+    }
+
+    //get Archive
+    public function gatArchive($date)
+    {
+        $SData=DB::table('seminars')
+            ->join('speakers','seminars.id','=','speakers.Seminar_id')
+            ->whereYear('S_date', '=',$date)
+
+            ->get();
+        return view('meetings',compact('SData'));
     }
 
 }
