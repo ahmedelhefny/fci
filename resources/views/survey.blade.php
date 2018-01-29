@@ -112,9 +112,11 @@
     <div class="container-fluid">
     <h2>استمارة تقيم الندوة</h2>
 
-    <p>  شكرا للمشاركة في الندوة نتمني ان تكونوا الندوة ذو قيمة بالنسبة لكم </p>
-    <form>
+    <p>  شكرا للمشاركة في الندوة نتمني ان تكونوا الندوة ذو قيمة بالنسبة لكم سنكون ممتنين لو استغرقت بضع دقائق لملء استمارة الاستبيان هذه حتى نتمكن من تحسين الحضور في المستقبل </p>
+    <p>كيف تقيم هذه الندوة من حيث ما يلي</p>
+        <form method="post" action="/StorSur/{{$S_id}}">
 
+            {{csrf_field()}}
     <table class='table table-bordered table-striped'>
         <thead>
             <tr>
@@ -131,26 +133,26 @@
         <tbody>
             <tr>
                 <td>1</td>
-                 <radiogroup>
+                 <radiogroup >
 
-                <td>هذا مكان السؤال يا حمار</td>
+                <td> مجمل الندوه</td>
                 <td>
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="ممتاز" >
                         
                     </td>
                 <td>
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="جيد جدا">
                        
                     </td>
                 <td>
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="جيد">
                                 
-                </td>
+                    </td>
                 <td>
                     
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="مقبول">
                             
-                </td>
+                    </td>
             </radiogroup>
 
             </tr>
@@ -158,40 +160,197 @@
             <tr>
                 <td>2</td>
                     <radiogroup>
-                    <td>هذا مكان السؤال يا حمار</td>
-                    <td><d
-                        iv class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
+                    <td>العمل علي تنظيم الندوه</td>
+                    <td>
+
+                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="ممتاز" >
                             
-                          </div>
+
                         </td>
                     <td>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+
+                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="جيد جدا">
                            
-                          </div>
+
                         </td>
                     <td>
-                            <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+
+                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="جيد">
                                     
-                                  </div>
-                    </td>
+
+                         </td>
                     <td>
-                            <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+
+                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="مقبول">
                                     
-                                  </div>
-                    </td>
+
+                         </td>
                 </radiogroup>
                 </tr>
+
+            <tr>
+                <td>3</td>
+                <radiogroup>
+                    <td>مدي معرفة المتحدث  بموضوع الندوه</td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="ممتاز" >
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="جيد جدا">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="جيد">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="مقبول">
+
+
+                    </td>
+                </radiogroup>
+            </tr>
+
+
+            <tr>
+                <td>4</td>
+                <radiogroup>
+                    <td>قدرة المتكلم على كسب وإبقاء انتباهك</td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="ممتاز" >
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="جيد جدا">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="جيد">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="مقبول">
+
+
+                    </td>
+                </radiogroup>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <radiogroup>
+                    <td>الدورات الدراسية</td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="ممتاز" >
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="جيد جدا">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="جيد">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="مقبول">
+
+
+                    </td>
+                </radiogroup>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <radiogroup>
+                    <td>ما مدي استفادتك من موضوع الندوه</td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="ممتاز" >
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="جيد جدا">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="جيد">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="مقبول">
+
+
+                    </td>
+                </radiogroup>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <radiogroup>
+                    <td>مدي اهتمامك بحضور  ندوات اخري</td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="ممتاز" >
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="جيد جدا">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="جيد">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="مقبول">
+
+
+                    </td>
+                </radiogroup>
+            </tr>
+
 
         </tbody>
 
     </table>
     
     
-       
+       <button type="submit">ارسال</button>
    
 </form>
 </div>

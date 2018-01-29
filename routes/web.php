@@ -34,7 +34,8 @@ Route::post('/login','SessionController@A');
 //archive
 
 Route::get('/Seminers/{date}','HomeController@gatArchive');
-
+//set survey
+Route::post('/StorSur/{id}','MeetingsController@StorSur');
 
 
 
