@@ -93,7 +93,9 @@ class HomeController extends Controller
             ->whereYear('S_date', '=',$date)
 
             ->get();
-        return view('meetings',compact('SData'));
+            $contact=DB::table('contactUs')->first();
+
+        return view('meetings',compact('SData','contact'));
     }
 
 

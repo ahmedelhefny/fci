@@ -155,7 +155,8 @@
 
 
     
-    
+@extends('master')
+@section('body')    
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-arabic.js')}}"></script>
 <script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>   
@@ -164,6 +165,6 @@
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/wow.min.js')}}"></script> 
 <script>new WOW().init();</script>  
-
+@stop
 </body>
 </html>

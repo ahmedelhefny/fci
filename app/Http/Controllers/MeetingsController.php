@@ -24,7 +24,9 @@ class MeetingsController extends Controller
             ->whereYear('S_date', '=', date('Y'))
 
             ->get();
-        return view('meetings',compact('SData' ,'day'));
+            $contact=DB::table('contactUs')->first();
+
+        return view('meetings',compact('SData' ,'day','contact'));
     }
 
     public function GetSeminar($id)
@@ -36,7 +38,9 @@ class MeetingsController extends Controller
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
             ->where('seminars.id','=',$id)
             ->first();
-        return view('informations' , compact('AllData','SDay'));
+            $contact=DB::table('contactUs')->first();
+
+        return view('informations' , compact('AllData','SDay','contact'));
     }
 
     public function StoreData($id)
@@ -106,7 +110,9 @@ class MeetingsController extends Controller
         $SDay=DB::table('seminars')
         ->where('S_date','=',date('Y-m-d',time()))
         ->get();
-        return view('survey', compact('S_id','SDay'));
+        $contact=DB::table('contactUs')->first();
+
+        return view('survey', compact('S_id','SDay','contact'));
     }
 
     public function DeleSem($id)

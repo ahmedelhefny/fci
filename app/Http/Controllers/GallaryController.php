@@ -24,7 +24,9 @@ class GallaryController extends Controller
         $Spname=DB::table('speakers')
             -> join('seminars','seminars.id','=','speakers.Seminar_id')
             ->get();
-        return view('Gallery',compact('Spname','daY'));
+            $contact=DB::table('contactUs')->first();
+
+        return view('Gallery',compact('Spname','daY','contact'));
     }
     public function getAllImg($id)
     {
@@ -35,7 +37,9 @@ class GallaryController extends Controller
         $imgs=SeminarImgs::where('Seminar_id',$id)->get();
         $total=SeminarImgs::where('Seminar_id',$id)->count();
         $S_name=Seminars::where('id',$id)->first();
-        return view('meeting_pic',compact('imgs','total','S_name','dAy'));
+        $contact=DB::table('contactUs')->first();
+
+        return view('meeting_pic',compact('imgs','total','S_name','dAy','contact'));
     }
     public function deleteMImg($id)
     {
