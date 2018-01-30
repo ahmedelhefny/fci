@@ -211,7 +211,7 @@
                     <div>
 
                         <img src="{{asset('images/contact_imgs/'.$ImgLog->Log_url)}}" style="text-align: center; width: 570px;position: relative;bottom: 70px; ">
-                        @if(Auth::check()&&Auth::user()->hasRole('admin'))<a href="/DeleImgLo/{{$ImgLog->id}}"><i class="fa fa-times" aria-hidden="true" style="position: absolute; top: 60px; right: 59px; color: #0D0A0A"></i></a>@endif
+                      <a href="/DeleImgLo/{{$ImgLog->id}}"><i class="fa fa-times" aria-hidden="true" style="position: absolute; top: 60px; right: 59px; color: #0D0A0A"></i></a>
 
 
 
@@ -242,9 +242,7 @@
       </div>
       @foreach($ImgUrl as $key=>$img)
       <div class="item">
-          @if(Auth::check()&&Auth::user()->hasRole('admin'))
           <a href="{{asset('/DelImpImg/'.$img->id)}}" style="position:absolute; top:2px;right:250px;"><i class="fa fa-times" aria-hidden="true" style=" color: #0D0A0A; background-color: #710909"></i></a>
-          @endif
            <img src="images/important imgs/{{$img->Imp_url}}" alt="">
       </div>
       
@@ -296,7 +294,11 @@
                 <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                     <h2 class="h1">محاور الملتقي</h2>
                     @foreach($axes as $key=>$axe)
-                    <h4> <i class="fa fa-envelope"></i> {{$axe->A_content}}  @if(Auth::check()&&Auth::user()->hasRole('admin')) <a class="btn-danger" href="/deleteAxes/{{$axe->id}}  "> حذف </a>@endif</h4>
+                    <h4> <i class="fa fa-envelope"></i> {{$axe->A_content}}
+                        
+                        <a class="btn btn-danger" href="/deleteAxes/{{$axe->id}}  "> حذف </a>
+                    
+                    </h4>
 
                     @endforeach
                 </div>
@@ -320,9 +322,7 @@
 
                 @foreach($parts as $key=> $part)
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    @if(Auth::check()&&Auth::user()->hasRole('admin'))
                     <a href="/deletepart/{{$part->id}}  "><i class="fa fa-times-circle" aria-hidden="true" style="position: relative; left: 170px; top: 19px;"></i></a>
-                    @endif
                     <div class="new222">
                         <img src="images/partners imgs/{{$part->P_url}}" alt=".....">
                         <h3>{{$part->P_name}}</h3>

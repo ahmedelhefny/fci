@@ -355,8 +355,6 @@
 </form>
 </div>
 </section>
-@extends('master')
-@section('body')
 
 <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap-arabic.js"></script>
@@ -367,7 +365,6 @@
     <script>new WOW().init();</script>  
     <script src="js/jquery.nicescroll.min.js"></script>   
     <script src="js/owl.carousel.min.js"></script>
-    @stop
 </body>
 
 </html>

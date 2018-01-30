@@ -116,18 +116,6 @@
 
 <!----------------------------------------------------->
 
-<div class="log text-center">
-    <div class="container">
-        <div class="loog">
-            <img src="{{asset('images/mans.png')}}">
-            <h2 class="h1">جامعة المنصورة</h2>
-            <div class="copy">
-                <div class="copy1 text-center">تحت رعاية © <strong>رئيس جامعة المنصورة </strong>وريادة</div>
-                <div class="copy2 text-center"> <strong>نائب رئيس جامعة المنصورة</strong></div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!----------------------------------------------------->
 <img src="{{asset('images/arrow.png')}}" id="top-scroll">

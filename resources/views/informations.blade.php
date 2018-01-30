@@ -256,9 +256,6 @@
 
 <!----------------------------------------------------->
 
-@extends('master')
-@section('body')
-
 
 
 
@@ -279,6 +276,6 @@
     <script src="js/wow.min.js"></script> 
     <script>new WOW().init();</script>  
     <script src="js/owl.carousel.min.js"></script>
-    @stop
+
 </body>
 </html>

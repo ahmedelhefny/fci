@@ -76,11 +76,7 @@
                           <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                              ندوات اليوم
                           </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                              @foreach($day as $key=>$Day)
-                            <li><a href="/informations/{{$Day->id}}">{{$Day->S_name}}</a></li>
-                                  @endforeach
-                          </ul>
+                         
                         </div>
 
             </li>
@@ -158,8 +154,6 @@
 </div>
 
 
-@extends('master')
-@section('body')
     
     
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
@@ -170,6 +164,6 @@
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/wow.min.js')}}"></script> 
 <script>new WOW().init();</script>  
-    @stop
+
 </body>
 </html>
