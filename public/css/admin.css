@@ -1,3 +1,9 @@
+body
+{
+    color: #aaa;
+    direction: rtl;
+}
+
 .navbar .container-fluid{
     padding-right: 60px;
     padding-left: 60px;
@@ -16,35 +22,41 @@
     font-weight: bold;
     color: #fff;
 }
-.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand i,.navbar-default .navbar-nav>li>a i{
-    margin-left: 5px;
-}
+
 .navbar .navbar-header .navbar-brand #large{
     display: none;
 }
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header{
     margin-top: 5px;
     margin-bottom: 5px;
-    background: rgb(15, 113, 214);
+    background: #066aab;
 }
 .navbar-default{
-    background: rgb(15, 113, 214);
+    background: #066aab;
 }
 /*********************************************/
+.all
+{
+    display: flex;
+  height: 1200px
+}
+
 .bod .all .one{
-    height: 725px;
+    height: 1200px;
     background: #fff;
-    width: 100%;
+    width: 250px;
+    color: #474747;
 }
 .bod .all .one img{
     display: inline-block;
     width: 70px;
     height: 70px;
     border-radius: 50%;
+    margin: 10px;
 }
 .bod .all .one h4{
     display: inline-block;
-    margin-left: 5px;
+  
     color: rgb(177, 154, 154);
     margin-top: 40px;
 }
@@ -55,48 +67,50 @@
 .bod .all .one h5{
     color: rgb(177, 154, 154);
     font-size: 12px;
+    margin: 20px;
 }
 .bod .all .one ul{
     list-style-type: none;
+    padding: 0;
 }
 .bod .all .one ul li{
     background: #fff;
-    padding: 10px;
+    padding: 13px;
     font-weight: bold;
     cursor: pointer;
-    margin-left: -55px;
+    border-bottom:1px solid #eeeeee; 
 }
 .bod .all .one ul li i{
     margin-right: 8px;
 }
 .bod .all .one ul li:hover{
+    background: #066aab;
+}
+
+.right
+{
+    height: 1200px;
     background: #ccc;
-}
-.bod .all .one ul .active{
-    background: rgb(15, 113, 214);
-    color: #fff;
-}
-.bod .all .two2 h2,.bod .all .two3 h2,.bod .all .two4 h2,.bod .all .two5 h2{
-    background: #fff;
-    padding-bottom: 10px;
-    padding-top:10px;
-    font-weight: bold;
-    font-family:Tahoma;
-}
-.bod .all .two2,.bod .all .two3,.bod .all .two4,.bod .all .two5{
-    height: 745px;
-    background: rgb(193, 193, 193);
-    width: 103%;
-    margin-top: -20px;
-    margin-left: -30px;
+   
+ 
     padding-top: 100px;
     line-height: 2;
-    font-weight: bold;
+    
+    width: calc(100% - 250px);
+
 }
-.bod .all input[type=file]{
-    margin: auto;
+.active{
+    background: #ccc !important;
+    color: #fff;
 }
-.bod .all .two3,.bod .all .two4,.bod .all .two5{
+
+
+.bod .all .two3,.bod .all .two4,.bod .all .two5,.bod .all .two6
+,.bod .all .two7,.bod .all .two8
+,.bod .all .two9,.bod .all .two10
+,.bod .all .two11,.bod .all .two12
+,.bod .all .two11,.bod .all .two13
+{
     display: none;
 }
 .bod .all .two .two1{
@@ -107,4 +121,37 @@
 .bod{
     
     margin-top: 26px;
+}
+
+
+
+ .div
+{
+
+  box-shadow:  2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);;
+    background: #fff;
+    padding: 20px 50px;
+    position: relative;
+width: 100%;
+    top: 50px;
+margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ .div h3
+{
+    margin-bottom: 30px;
+   text-align: center;
+   color: #474747;
+}
+
+.btn-default
+{
+    background: #066aab;
+    color: #fff;
+}
+
+input
+{
+    width: 100%;
 }

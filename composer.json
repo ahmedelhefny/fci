@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "caouecs/laravel-lang": "~3.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0"
@@ -15,6 +16,7 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "~6.0",
+        "squizlabs/php_codesniffer": "^3.2",
         "symfony/thanks": "^1.0"
     },
     "autoload": {
@@ -54,4 +56,14 @@
         "sort-packages": true,
         "optimize-autoloader": true
     }
+    ,
+"repositories": [
+{
+"type": "composer",
+"url": "https://packagist.org"
+},
+{ "packagist": false }
+]
+
+
 }
