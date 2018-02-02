@@ -155,3 +155,8 @@ input
 {
     width: 100%;
 }
+
+.table,td,th
+{
+    text-align: center;
+}

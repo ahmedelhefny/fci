@@ -1,355 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf" value="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>الملتقي الثاني لمطوري تكنولوجيا المعلومات</title>
-<link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/hover.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/hover-min.css">
-    <link rel="stylesheet" href="css/demo-page.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap-arabic.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+
+    <link rel="stylesheet" href="css/new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
     <!--[if lt IE 9]>
-            <script src="js/html5shiv.min.js"></script>
-            <script src="js/respond.min.js"></script>
-        <![endif]-->
-      <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/respond.min.js"></script>
 
 </head>
-<body>
-
-
-        <div class="main-login">
-                <div class="login">
-                    <div style="width: 100%; text-align: right;">
-                        <i id="login-close" style="margin: 7px;" class="fa fa-close"></i>
-            
-                    </div>
-                    <h2>تسجيل الدخول</h2>
-                    <div class="img-brand-form">
-                        <img src="{{asset('images/mans.png')}}">
-            
-                    </div>
-                    <form method="post" action="/login">
-                        {{csrf_field()}}
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">البريد الالكتروني</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="البريد الالكتروني">
-                        </div>
-                        <div class="form-group ">
-                            <label for="exampleInputPassword1">الرقم السري</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="الرقم السري">
-                        </div>
-                        <div class="invalid-feedback">
-                            @if($errors->any())
-                                {{$errors->first()}}
-                            @endif
-                        </div>
-            
-            
-                        <div class="checkbox">
-                            <label>
-                                <input name="checked" type="checkbox" checked>تذكرني
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-default">Login</button>
-                    </form>
-            
-                </div>
-            </div>
+    <body>
+    @extends('master')
+    @section('body')
 
 
 
+    <!--start head-->
 
+    <section class="o-head">
+        <div class="i-head">
 
-<!-- start nav section -->
-    <div class="color"></div>
-
-<!-- Start Navbar -->
-
-<nav class="navbar navbar-default navbar-fixed-top">
-
-  <div class="container">
-
-      <div class="navbar-header">
-
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <a class="navbar-brand" href="#">TDS2</a>
-
-      </div>
-
-
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav navbar-right">
-
-            <li class="actives">
-                <a href="/">الرئيسية
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-
-
-            <li>
-                <a href="/meetings">الندوات</a>
-            </li>
-
-
-            <li>
-                <a href="#me_s">شركات النجاح</a>
-            </li>
-
-
-            <li>
-                <a href="#me_d">محاور الملتقي</a>
-            </li>
-
-            <li>
-                        <div class="dropdown1">
-
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                             ندوات اليوم
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                              @foreach($SDay as $key=>$sday)
-                            <li><a href="/informations/{{$sday->id}}">{{$sday->S_name}}</a></li>
-                                  @endforeach
-                          </ul>
-                        </div>
-
-            </li>
-
-          <li>
-              <a href="/Gallery">صور الندوات</a>
-          </li>
-
-
-            <li>
-                <a href="#contact_us">اتصل بنا</a>
-            </li>
-
-
-            <li>
-                        <div class="dropdown">
-
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            الملتقيات السابقة
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                              @foreach($allMeetings as $a)
-                              @if($a->Year!=date('Y',time()))
-                            <li><a href="/Seminers/{{$a->Year}}">ملتقي {{$a->Year}}</a></li>
-                            @endif
-                            @endforeach
-                          </ul>
-                        </div>
-
-            </li>
-            @if(!Auth::check())
-            <li > 
-                    <a class='ma_login' href="#"> تسجيل الدخول</a>
-            </li>
-            @elseif(Auth::check() && Auth::user()->hasRole('admin'))
-            <li>
-                    <a href="/admin"> لوحة التحكم</a>
-
-            </li>
-            <li>
-                    <a href="/logout"> تسجيل الخروج</a>
-
-            </li>
-            @elseif(Auth::check() && Auth::user()->hasRole('anther'))
-            <li>
-                    <a href="/anther"> لوحة التحكم</a>
-
-            </li>
-            <li>
-                    <a href="/logout"> تسجيل الخروج</a>
-
-            </li>
-            @else
-            <li>
-                    <a href="/logout"> تسجيل الخروج</a>
-
-            </li>
-            @endif
-    
-
-      </ul>
-
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-<!-- End Navbar -->
-
-<section class="log text-center">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="loog">
-                <div class="col-lg-3 col-md-3">
-                    <img src="{{asset('images/mans.png')}}" alt=".....">
-                    <h2>جامعة المنصورة</h2>
-                    <h4>MANSOURA<br> UNIVERSITY</h4>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div>
-
-                        <img src="{{asset('images/contact_imgs/'.$ImgLog->Log_url)}}" style="text-align: center; width: 570px;position: relative;bottom: 70px; ">
-                      <a href="/DeleImgLo/{{$ImgLog->id}}"><i class="fa fa-times" aria-hidden="true" style="position: absolute; top: 60px; right: 59px; color: #0D0A0A"></i></a>
-
-
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <img src="{{asset('images/mans.png')}}" alt="......">
-                    <h2>كلية حاسبات ومعلومات</h2>
-                    <h4>faculty of computer<br> science and information</h4>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
-    
-    
-
-<!-- start nav section -->
+    </section>
 
 
-  
-   <!--Start Slide-->
-<div id="myslide" class="carousel slide" data-ride="carousel">
-
-  <div class="carousel-inner">
-      <div class="item active">
-           <img src="{{asset('images/important imgs/m2.jpg')}}" alt="Main">
-      </div>
-      @foreach($ImgUrl as $key=>$img)
-      <div class="item">
-          <a href="{{asset('/DelImpImg/'.$img->id)}}" style="position:absolute; top:2px;right:250px;"><i class="fa fa-times" aria-hidden="true" style=" color: #0D0A0A; background-color: #710909"></i></a>
-           <img src="images/important imgs/{{$img->Imp_url}}" alt="">
-      </div>
-      
-      @endforeach
-
-  <a class="left carousel-control" href="#myslide" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-   <span class="sr-only"></span>
-  </a>
-  <a class="right carousel-control" href="#myslide" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-left"></span>	
-    <!-- <span class="sr-only"></span>-->
-  </a>
-
-   </div>
-</div>
-
-  <!-- end carousel --> 
-    
-    
-    
-
-   <!----------> 
-    
-
-<section class="today1 visible-sm visible-xs text-center">
-    <div class="container">
-    <div class="t1"><h3>ندوات اليوم</h3></div>
-    
-    
- <div class="row">
-     @foreach($SDay as $key=>$i)
-     <a href="/informations/{{$i->id}}"><div class="t2 col-sm-4 col-xs-4"><h3>{{$i->S_name}} </h3><p class="lead"> {{$i->S_content}}</p></div></a>
-    @endforeach
- </div>
-    </div>
-</section>  
+    <!--end head-->
 
 
-    
+    <!--start carousal-->
 
-<!-- end logo -->
-  
-<section id='me_d' class="new4">
-    <div class="container">
-        <div class="row">
-            <div class="new44">
 
-                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                    <h2 class="h1">محاور الملتقي</h2>
-                    @foreach($axes as $key=>$axe)
-                    <h4> <i class="fa fa-envelope"></i> {{$axe->A_content}}
-                        
-                        <a class="btn btn-danger" href="/deleteAxes/{{$axe->id}}  "> حذف </a>
-                    
-                    </h4>
+
+    <section class="slide-wrapper">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    @foreach($ImgUrl as $key=>$img)
+
+                    <li data-target="#myCarousel" data-slide-to="{{$key+1}}"></li>
+                    @endforeach
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item item1 active">
+                        <div class="fill" style=" background-color:#48c3af;">
+                            <div class="inner-content">
+                                <div class="carousel-img">
+                                    <img src="images/28.png" alt="sofa" class="img img-responsive" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    @foreach($ImgUrl as $key=>$img)
+
+                    <div class="item item2">
+                        <div class="fill" style="background-color:#b33f4a;">
+                            <div class="inner-content">
+                                <div class="carousel-img">
+                                    @if(Auth::check() && Auth::user()->hasRole('admin'))
+                                        <a href="/DelImpImg/{{$img->id}}"> &times; </a>
+
+                                    @endif
+                                    <img src="images/important imgs/{{$img->Imp_url}}" alt="white-sofa" class="img img-responsive" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 
                     @endforeach
-                </div>
 
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
-                    <img src="images/im1.jpg" alt="......">
+
                 </div>
             </div>
         </div>
-    </div>
-</section>
-  
-    
-<section id='me_s' class="new2 text-center">
-    <div class="cov2">
-        <div class="container">
-            <h2 class="h1">شركاء النجاح</h2>
-            <hr style="width:140px;height:2px;background:#999;margin-top:-5px;">
-            <h2>WE HELP YOU TO FIND YOUR WAY TO LEARNING NEW TECHNOLOGY</h2>
-            <div class="new22">
+    </section>
+
+
+    <!--end carousal-->
+
+
+    <!-- logo-->
+
+    <section class="o-logo">
+        <div class="i-logo">
+            <div class="container-fluid">
+                <div class="logos">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div>
+                            <img src="/images/mans.png">
+                            <h3>Mansoura University</h3>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        @if(isset($ImgLog->Log_url))
+                            @if(Auth::check() && Auth::user()->hasRole('admin'))
+                        <a href="/DeleImgLo/{{$ImgLog->id}}" style="color: red; font-size: 20px; font-weight: bolder;"> &times; </a>
+                            @endif
+
+
+
+                        <img  class="img" src="{{asset('images/contact_imgs/'.$ImgLog->Log_url)}}">
+                            @endif
+
+                    </div>
+                    <div class="col-md-3">
+                        <img src="/images/fa.jpg">
+                        <h3>Faculty Of Computer Science  And Information Technology  </h3>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- end logo-->
+    <!-- start people-->
+    <section class="people">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-3">
+                  <img src="images/moh.jpg">
+                  <h2>تحت رعاية</h2>
+                  <h3> أد/ محمد القناوي</h3>
+                  <p>(رئيس جامعة المنصورة)</p>
+                  <p></p>
+              </div>
+
+              <div class="col-md-3">
+                  <img src="images/ash.jpg">
+                  <h2>تحت ريادة</h2>
+                  <h3> أد/ أشرف عبدالباسط</h3>
+                  <p>(نائب رئيس جامعة المنصورة)</p>
+                  <p></p>
+              </div>
+                <div class="col-md-3">
+                  <img src="images/moh.jpg">
+                  <h2>تحت اشراف</h2>
+                  <h3> أد/ حسن سليمان </h3>
+                  <p>(عميد كليه الحاسبات والمعلومات)</p>
+                  <p></p>
+              </div>
+                <div class="col-md-3">
+                  <img src="images/de.jpg">
+                  <h2> بالشراكه مع </h2>
+                  <h3>جمعيه الدلتا </h3>
+                  <h3>ومجموعه من الشركات المتخصصه</h3>
+                  <p></p>
+              </div>
+
+          </div>
+      </div>
+    </section>
+    <!-- end people-->
+
+    <!--start  ax-->
+    <section id="axu" class="axu">
+        <h2>محاور الملتقي</h2>
+        <div class="all">
+
+
+        <ul class="ul1">
+            <li>
+
+                <p>التواصل مع الشركات العاملة في مجال الحاسبات والمعلومات لعرض أفاق العمل والخبرات المطلوبة في هذا المجال لتطوير مستوي خريجي الكلية بما يناسب احتياجات العمل</p>
+            </li>
+            <li>
+                <p> الدعم الفني لمشاريع التخرج لمرحلة البكالوريوس التي يمكن تحويلها لمنتج من خلال تبني الشركات لهذه المشروعات</p>
+            </li>
+        </ul>
+        <span class="image"><img src="images/la2.jpg" alt=""></span>
+        <ul class="ul2">
+            <li>
+                <p> اطلاع أعضاء هيئة التدريس والطلبة علي احدث التكنولوجيا المستخدمة في مجال التخصص في سوق العمل</p>
+            </li>
+            <li><h4>Quis portitor</h4>
+                <p> الحصول علي فرص تدريب علي رأس العمل ببعض الشركات للطلاب وتطوير التدريب الصيفي لطلاب الكلية</p>
+            </li>
+        </ul>
+        </div>
+    </section>
+
+    <!--end ax-->
+
+
+    <!--s-->
+    <section id="two" class="main accent2">
+        <header>
+            <h2>رسالة الكلية</h2>
+            <p>تسعى كلية الحاسبات و المعلومات جامعة المنصورة إلى تقديم برامج أكاديمية شامله و متوازنه و إعداد كوادر ذات كفاءه و قادره على المنافسه محليا وإقليميا و ملتزمه بتطوير المجتمع.</p>
+        </header>
+        <div class="inner">
+            <span class="image main">
+                <img src="images/sd.jpg" alt="">
+            </span>
+        </div>
+    </section>
+
+
+    <!--e-->
+
+    <!--start 3-->
+
+    <section id="three" class="main alt">
+        <header>
+            <h2 style="color: #b9b7b7;">شركاء النجاح</h2>
+            <p>Praesent dapibus, neque idortor neque egat volutpat. Nam dui mi tincidunt magna accumsan.</p>
+        </header>
+        <div class="inner">
+            <div class="posts">
 
                 @foreach($parts as $key=> $part)
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <a href="/deletepart/{{$part->id}}  "><i class="fa fa-times-circle" aria-hidden="true" style="position: relative; left: 170px; top: 19px;"></i></a>
-                    <div class="new222">
-                        <img src="images/partners imgs/{{$part->P_url}}" alt=".....">
-                        <h3>{{$part->P_name}}</h3>
-                        <p class="lead"> {{$part->P_description}}</p>
-                     </div>
+                <div>
+                    <article>
+                        @if(Auth::check() && Auth::user()->hasRole('admin'))
+
+                            <a href="/deletepart/{{$part->id}}  "> &times; </a>
+                        @endif
+                        <a href="#" class="image"><img src="images/partners imgs/{{$part->P_url}}" alt="">
+                        </a>
+                        <div class="content">
+                            <h3>{{$part->P_name}}</h3>
+                            <p>{{$part->P_description}}</p>
+
+                        </div>
+                    </article>
+
                 </div>
-                @endforeach
+
+                    @endforeach
+
 
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
+    <!--end 3-->
 
 
 
 
-@extends('master')
-@section('body')
-<!-----------------------------------------------------> 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap-arabic.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>   
+    <script src="js/jquery.nicescroll.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/wow.min.js"></script> 
-    <script>new WOW().init();</script>  
-    <script src="js/owl.carousel.min.js"></script>
-    @stop
-</body>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script src="js/new.js"></script>
+        @stop
+    </body>
 </html>

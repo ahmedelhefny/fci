@@ -5,7 +5,7 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>صور كل الندوات</title>
-<link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/hover.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/demo-page.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap-arabic.css">
+    <link rel="stylesheet" href="css/nav.css">
+
     <link rel="stylesheet" href="css/style.css">
       <script src="js/respond.min.js"></script>
       <style>
@@ -20,6 +22,20 @@
           {
               overflow:auto !important;
           }
+
+
+           .navbar
+           {
+               background: #fff;
+
+               box-shadow: 0px 3px #eee;
+               top: 0;
+           }
+          .foot
+          {
+              top: 0;
+          }
+
       </style>
 
 </head>
@@ -29,96 +45,11 @@
 
 
 
-
-<!-- start nav section -->
-    <div class="color"></div>
-
-<!-- Start Navbar -->
-
-<nav class="navbar navbar-default navbar-fixed-top">
-
-  <div class="container">
-
-      <div class="navbar-header">
-
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <a class="navbar-brand" href="#">TDS2</a>
-
-      </div>
+@extends('master')
+@section('body')
 
 
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav navbar-right">
-
-            <li class="actives">
-                <a href="/">الرئيسية
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-
-
-            <li>
-                <a href="/meetings">الندوات</a>
-            </li>
-
-
-            <li>
-                        <div class="dropdown1">
-
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                             ندوات اليوم
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                @foreach($daY as $key=>$A)
-                            <li><a href="/informations/{{$A->id}}">{{$A->S_name}}</a></li>
-                                    @endforeach
-                          </ul>
-                        </div>
-
-            </li>
-
-
-            <li>
-                <a href="#contact_us">اتصل بنا</a>
-            </li>
-
-
-            <li>
-                        <div class="dropdown">
-
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            الملتقيات السابقة
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">ملتقي 2017</a></li>
-                            <li><a href="#">ملتقي 2016</a></li>
-                          </ul>
-                        </div>
-
-            </li>
-
-      </ul>
-
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<!-- End Navbar -->
-
-
-
-
-
-  <!-- Start Section  team -->
+    <!-- Start Section  team -->
     <section class="team text-center">
     
         <div class="container">
@@ -165,18 +96,12 @@
     </section>
 
 
-    @extends('master')
-    @section('body')
-    
-
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap-arabic.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>   
+    <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/wow.min.js"></script> 
+    <script src="js/wow.min.js"></script>
     <script>new WOW().init();</script>  
-    <script src="js/owl.carousel.min.js"></script>
     @stop
       
 </body>

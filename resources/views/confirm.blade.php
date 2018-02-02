@@ -6,8 +6,36 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap-arabic.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/7fny.css')}}">
-    
+<style>
+    div
+    {
+
+        text-align: center;
+
+        background-color:#fff;
+        margin: 50px
+
+    }
+    h1{
+        display:inline;
+        font-size: 50px;
+
+    }
+    .a,.b,.c
+    {
+        font-family:arial;
+        font-size: 15px;
+        color: #474747;
+        line-height: 70px;
+
+    }
+    a{
+        font-family:arial;
+        font-size: 15px;
+        color:#88EED5;
+    }
+
+</style>
 
 </head>
 <body style="direction: ltr;"></body>

@@ -1263,7 +1263,7 @@ input::placeholder {
 }
 
 .form-control:focus {
-    border-color: none;
+
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none
@@ -1501,19 +1501,6 @@ fixed .caption span {
 /**************/
 
 
-/*----*/
-
-.color {
-    width: 100%;
-    height: 10px;
-    background: linear-gradient(to right, #55bce9 0%, #7370b5 100%);
-    position: fixed;
-    top: 103px;
-}
-
-
-/*----*/
-
 .log {
     margin-top: 80px;
 }
@@ -1591,112 +1578,6 @@ fixed .caption span {
     border: 1px solid #bf4545;
 }
 
-
-/*login model*/
-.main-login
-{
-    width: 100%;
-    display: none;
-}
-.login
-{
-    width: 550px;
-height: 590px;
-background-color: #fff;
-box-shadow: -6px -2px 20px 0px #1212121a;position: fixed;
-left: 32%;
-z-index: 9999;
-top: 94px;
-color: #6781ba;
-}
-.login h2
-{
-    text-align: center;
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 10px;
-    color: #6781ba;
-}
-.login form
-{
-    padding: 10px;
-    margin-top: 30px;
-}
-.login button
-{
-    width: 100%;
-    text-align: center;
-    border-top: 3px solid #fff;
-    color: #fff;
-    background-color: #6781ba;
-    margin-top: 20px;
-    border-radius: 0;
-    font-size: 16px;
-}
-.login button:hover,active,focus
-{
-    border-top: 3px solid #000;
-    color: #fff;
-    background-color: #000;
-}
-
-.login .img-brand-form
-{
-    width: 100%;
-    height: 150px;
-    text-align: center;
-}
-.login .img-brand-form img
-{
-    width: 150px;
-    height: 150px;
-    text-align: center;
-}
-#login-close
-{
-    
-    color: #6781ba
-}
-
-#login-close:hover
-{
-    cursor: pointer;
-    color: #000000;
-}
-
-
-/*footer*/
-
-#form-u,#form-c
-{
-    display: none;
-    margin-top: 30px;
-
-}
-
-.text-footer
-{
-    color: rgb(117, 128, 134);
-font-size: 13px;
-line-height: 2;
-display: inline-flex;
-font-family: 'Roboto', sans-serif;
-padding: 10px 0 10px 0;
-
-}
-.text-footer i
-{
-    font-size: 16px;
-    background: none;
-    color: #20b6e7;
-    display: inline-block;
-    line-height: 32px;
-}
-
-.text-footer input
-{
-    margin-right:10px; 
-}
 
 
 

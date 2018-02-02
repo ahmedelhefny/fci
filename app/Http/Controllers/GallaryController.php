@@ -17,6 +17,14 @@ class GallaryController extends Controller
     //get data from database
     public function getall()
     {
+        $SDay=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
+        $allMeetings=DB::table('AllMeeting')
+            ->orderBy('Year','desc')
+            ->get();
+
 
         $daY=DB::table('seminars')
             ->where('S_date','=',date('Y-m-d',time()))
@@ -26,10 +34,18 @@ class GallaryController extends Controller
             ->get();
             $contact=DB::table('contactUs')->first();
 
-        return view('Gallery',compact('Spname','daY','contact'));
+        return view('Gallery',compact('Spname','daY','contact','allMeetings','SDay'));
     }
     public function getAllImg($id)
     {
+        $SDay=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
+        $allMeetings=DB::table('AllMeeting')
+            ->orderBy('Year','desc')
+            ->get();
+
         $dAy=DB::table('seminars')
             ->where('S_date','=',date('Y-m-d',time()))
             ->get();
@@ -39,7 +55,7 @@ class GallaryController extends Controller
         $S_name=Seminars::where('id',$id)->first();
         $contact=DB::table('contactUs')->first();
 
-        return view('meeting_pic',compact('imgs','total','S_name','dAy','contact'));
+        return view('meeting_pic',compact('imgs','total','S_name','dAy','contact','SDay','allMeetings'));
     }
     public function deleteMImg($id)
     {

@@ -27,10 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function roles()
-    {
-        return $this->belongsToMany('App\Role','user_role','user_id','role_id');
-    }
+
 
 
     public function hasAnyRole($roles)
@@ -47,7 +44,7 @@ class User extends Authenticatable
         }
         else
         {
-            if($this->hasRole($role))
+            if($this->hasRole($roles))
             {
                 return true;
             }
@@ -62,5 +59,10 @@ class User extends Authenticatable
 
         return false;
 
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role','user_role','user_id','role_id');
     }
 }

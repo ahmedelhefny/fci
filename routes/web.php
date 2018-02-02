@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/new',function (){
+    return view('ne');
+});
 
 Route::get('/','HomeController@GetAll');
 
@@ -18,6 +21,7 @@ Route::get('/','HomeController@GetAll');
 Route::post('/storecomplain','HomeController@storecomplain');
 
 //directe to img of seminer
+
 Route::get('/getAllImg/{id}','GallaryController@getAllImg');
 
 Route::get('/meetings', 'MeetingsController@GetAll');
@@ -31,22 +35,19 @@ Route::get('/informations/{id}', 'MeetingsController@GetSeminar');
 Route::post('/Registe/{id}','MeetingsController@StoreData');
 //login
 Route::post('/login','SessionController@A');
+//logout
+Route::get('/logout','SessionController@destroy');
+
+
+
 
 //archive
 
 Route::get('/Seminers/{date}','HomeController@gatArchive');
 
-Route::post('/uEdit','HomeController@uEdit');
-Route::post('/cEdit','HomeController@cEdit');
-
-Route::get('/admin',function(){
-    return view('admin');
-});
-
 
 //set survey
 Route::post('/StorSur/{id}','MeetingsController@StorSur');
-
 
 
 /*Role*/
@@ -64,8 +65,6 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
     //delete partners
     Route::get('/deletepart/{id}','HomeController@DeleteParts');
 
-    //logout
-    Route::get('/logout','SessionController@destroy');
 
 
     //delete seminar
@@ -73,5 +72,39 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
     //delete img logo
     Route::get('/DeleImgLo/{id}','HomeController@DelImgLogo');
 
+
+
+    Route::post('/addmeeting','AdminController@addmeeting');
+
+    Route::post('/addseminar','AdminController@addseminars');
+
+    Route::post('/storeImpImg','AdminController@storeImpIMg');
+
+    Route::post('/storesemImg','AdminController@storeSemImg');
+
+    Route::post('/addpart','AdminController@addPart');
+
+    Route::post('/addlogo','AdminController@addLogo');
+
+    Route::get('/admin','AdminController@getall');
+
+    Route::post('/getrollers','AdminController@Reg');
+    Route::post('/getfeed','AdminController@getfeed');
+    Route::post('/adduser','AdminController@adduser');
+    Route::post('/changeRole','AdminController@changeRole');
+    Route::get('/removeUser/{id}',"AdminController@removeUser");
+
+    Route::post('/uEdit','HomeController@uEdit');
+    Route::post('/cEdit','HomeController@cEdit');
+
+
+
+
+
+
+
+
+
+
 });
-        
+

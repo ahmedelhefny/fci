@@ -14,6 +14,13 @@ class MeetingsController extends Controller
     //get all seminars
     public function GetAll()
     {
+        $SDay=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
+        $allMeetings=DB::table('AllMeeting')
+            ->orderBy('Year','desc')
+            ->get();
 
         $day=DB::table('seminars')
             ->where('S_date','=',date('Y-m-d',time()))
@@ -26,21 +33,27 @@ class MeetingsController extends Controller
             ->get();
             $contact=DB::table('contactUs')->first();
 
-        return view('meetings',compact('SData' ,'day','contact'));
+
+        return view('meetings',compact('SData' ,'day','contact','SDay','allMeetings'));
     }
 
     public function GetSeminar($id)
     {
         $SDay=DB::table('seminars')
-        ->where('S_date','=',date('Y-m-d',time()))
-        ->get();
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
+        $allMeetings=DB::table('AllMeeting')
+            ->orderBy('Year','desc')
+            ->get();
+
         $AllData =DB::table('seminars')
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
             ->where('seminars.id','=',$id)
             ->first();
             $contact=DB::table('contactUs')->first();
 
-        return view('informations' , compact('AllData','SDay','contact'));
+        return view('informations' , compact('AllData','SDay','contact','allMeetings'));
     }
 
     public function StoreData($id)
@@ -55,7 +68,7 @@ class MeetingsController extends Controller
 
             if ($Num + 1 > 0 || $Num + 1 < 231) {
                 $location = "مدرج 1";
-                $chair = $Num + 21;
+                $chair = $Num + 41;
 
             } elseif ($Num + 1 > 230 || $Num + 1 < 481) {
                 $location = "مدرج 2";
@@ -108,11 +121,15 @@ class MeetingsController extends Controller
     {
         $S_id=$id;
         $SDay=DB::table('seminars')
-        ->where('S_date','=',date('Y-m-d',time()))
-        ->get();
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
+        $allMeetings=DB::table('AllMeeting')
+            ->orderBy('Year','desc')
+            ->get();
         $contact=DB::table('contactUs')->first();
 
-        return view('survey', compact('S_id','SDay','contact'));
+        return view('survey', compact('S_id','SDay','contact','allMeetings'));
     }
 
     public function DeleSem($id)

@@ -5,111 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>questions</title>
-    <link href="https://fonts.googleapis.com/css?family=Mirza" rel="stylesheet">
-    <link href="{{asset('css/bootstrap-arabic.css')}}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
+
+        <link href="{{asset('css/bootstrap-arabic.css')}}" rel="stylesheet">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/nav.css')}}">
 
     <link href="{{asset('css/surv.css')}}" rel="stylesheet">
-    <!-- [if lt IE9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.js"></script>
-     <!--[end if]-->
+        <style>
+            body
+            {
+                padding-top:90px;
+            }
+
+            .navbar
+            {
+                background: #fff;
+
+                box-shadow: 0px 3px #eee;
+                top: 0;
+            }
+            .foot
+            {
+                box-shadow: -1px -4px 10px #eee;
+                top: 0;
+            }
+        </style>
+
+        <!-- [if lt IE9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.js"></script>
+         <!--[end if]-->
 </head>
 <body>
 
-    <!-- start nav section -->
-    <div class="color"></div>
-
-<!-- Start Navbar -->
-
-<nav class="navbar navbar-default navbar-fixed-top">
-
-  <div class="container">
-
-      <div class="navbar-header">
-
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <a class="navbar-brand" href="#">TDS2</a>
-
-      </div>
-
-
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav navbar-right">
-
-            <li class="actives">
-                <a href="/">الرئيسية
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-
-
-            <li>
-                <a href="/meetings">الندوات</a>
-            </li>
-
-
-            <li>
-                        <div class="dropdown1">
-
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                             ندوات اليوم
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                @foreach($SDay as $key=>$A)
-                            <li><a href="/informations/{{$A->id}}">{{$A->S_name}}</a></li>
-                                    @endforeach
-                          </ul>
-                        </div>
-
-            </li>
-
-
-            <li>
-                <a href="#contact_us">اتصل بنا</a>
-            </li>
-
-
-            <li>
-                        <div class="dropdown">
-
-                          <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            الملتقيات السابقة
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">ملتقي 2017</a></li>
-                            <li><a href="#">ملتقي 2016</a></li>
-                          </ul>
-                        </div>
-
-            </li>
-
-      </ul>
-
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<!-- End Navbar -->
-
-
-        
+@extends('master')
+@section('body')
    
 
 <!--start body-->
     
 <section class="main_s">
-    <div class="container-fluid">
+    <div class="container">
     <h2>استمارة تقيم الندوة</h2>
 
     <p>  شكرا للمشاركة في الندوة نتمني ان تكونوا الندوة ذو قيمة بالنسبة لكم سنكون ممتنين لو استغرقت بضع دقائق لملء استمارة الاستبيان هذه حتى نتمكن من تحسين الحضور في المستقبل </p>
@@ -122,10 +59,11 @@
             <tr>
                 <td>#</td>
                 <td>الاسئلة</td>
-                <td>ممتاز</td>
-                <td>جيد جد</td>
-                <td>جيد</td>
-                <td>مقبول</td>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
 
                 
             </tr>
@@ -137,20 +75,25 @@
 
                 <td> مجمل الندوه</td>
                 <td>
-                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="ممتاز" >
+                        <input class="form-check-input" type="radio" name="momtaz1"  value="5" >
                         
                     </td>
                 <td>
-                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="جيد جدا">
+                        <input class="form-check-input" type="radio" name="momtaz1"  value="4">
                        
                     </td>
                 <td>
-                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="جيد">
+                        <input class="form-check-input" type="radio" name="momtaz1"  value="3">
                                 
                     </td>
                 <td>
                     
-                        <input class="form-check-input" type="radio" name="momtaz1" id="exampleRadios1" value="مقبول">
+                        <input class="form-check-input" type="radio" name="momtaz1"  value="2">
+                            
+                    </td>
+                     <td>
+                    
+                        <input class="form-check-input" type="radio" name="momtaz1"  value="1">
                             
                     </td>
             </radiogroup>
@@ -163,26 +106,32 @@
                     <td>العمل علي تنظيم الندوه</td>
                     <td>
 
-                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="ممتاز" >
+                            <input class="form-check-input" type="radio" name="momtaz_2"  value="5" >
                             
 
                         </td>
                     <td>
 
-                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="جيد جدا">
+                            <input class="form-check-input" type="radio" name="momtaz_2"  value="4">
                            
 
                         </td>
                     <td>
 
-                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="جيد">
+                            <input class="form-check-input" type="radio" name="momtaz_2"  value="3">
                                     
 
                          </td>
                     <td>
 
-                            <input class="form-check-input" type="radio" name="momtaz_2" id="exampleRadios1" value="مقبول">
+                            <input class="form-check-input" type="radio" name="momtaz_2"  value="2">
                                     
+
+                         </td>
+                        <td>
+
+                            <input class="form-check-input" type="radio" name="momtaz_2"  value="1">
+
 
                          </td>
                 </radiogroup>
@@ -194,25 +143,31 @@
                     <td>مدي معرفة المتحدث  بموضوع الندوه</td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="ممتاز" >
+                        <input class="form-check-input" type="radio"  name="momtaz_3" value="5" >
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="جيد جدا">
+                        <input class="form-check-input" type="radio"  name="momtaz_3" value="4">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="جيد">
+                        <input class="form-check-input" type="radio"  name="momtaz_3" value="3">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_3" value="مقبول">
+                        <input class="form-check-input" type="radio"  name="momtaz_3" value="2">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio"  name="momtaz_3" value="1">
 
 
                     </td>
@@ -226,25 +181,31 @@
                     <td>قدرة المتكلم على كسب وإبقاء انتباهك</td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="ممتاز" >
+                        <input class="form-check-input" type="radio"  name="momtaz_4" value="5" >
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="جيد جدا">
+                        <input class="form-check-input" type="radio"  name="momtaz_4" value="4">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="جيد">
+                        <input class="form-check-input" type="radio"  name="momtaz_4" value="3">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_4" value="مقبول">
+                        <input class="form-check-input" type="radio"  name="momtaz_4" value="2">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio"  name="momtaz_4" value="1">
 
 
                     </td>
@@ -257,25 +218,31 @@
                     <td>الدورات الدراسية</td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="ممتاز" >
+                        <input class="form-check-input" type="radio"  name="momtaz_5" value="5" >
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="جيد جدا">
+                        <input class="form-check-input" type="radio"  name="momtaz_5" value="4">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="جيد">
+                        <input class="form-check-input" type="radio"  name="momtaz_5" value="3">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_5" value="مقبول">
+                        <input class="form-check-input" type="radio"  name="momtaz_5" value="2">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio"  name="momtaz_5" value="1">
 
 
                     </td>
@@ -288,25 +255,31 @@
                     <td>ما مدي استفادتك من موضوع الندوه</td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="ممتاز" >
+                        <input class="form-check-input" type="radio"  name="momtaz_6" value="5" >
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="جيد جدا">
+                        <input class="form-check-input" type="radio"  name="momtaz_6" value="4">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="جيد">
+                        <input class="form-check-input" type="radio"  name="momtaz_6" value="3">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_6" value="مقبول">
+                        <input class="form-check-input" type="radio"  name="momtaz_6" value="2">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio"  name="momtaz_6" value="1">
 
 
                     </td>
@@ -319,25 +292,31 @@
                     <td>مدي اهتمامك بحضور  ندوات اخري</td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="ممتاز" >
+                        <input class="form-check-input" type="radio"  name="momtaz_7" value="5" >
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="جيد جدا">
+                        <input class="form-check-input" type="radio"  name="momtaz_7" value="4">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="جيد">
+                        <input class="form-check-input" type="radio"  name="momtaz_7" value="3">
 
 
                     </td>
                     <td>
 
-                        <input class="form-check-input" type="radio" id="exampleRadios" name="momtaz_7" value="مقبول">
+                        <input class="form-check-input" type="radio"  name="momtaz_7" value="2">
+
+
+                    </td>
+                    <td>
+
+                        <input class="form-check-input" type="radio"  name="momtaz_7" value="1">
 
 
                     </td>
@@ -350,23 +329,19 @@
     </table>
     
     
-       <button type="submit">ارسال</button>
+       <button type="submit" class="btn btn-primary">ارسال</button>
    
 </form>
 </div>
 </section>
-@extends('master')
-@section('body')
-<script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap-arabic.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/hi.js"></script>
-    <script src="js/wow.min.js"></script> 
-    <script>new WOW().init();</script>  
-    <script src="js/jquery.nicescroll.min.js"></script>   
-    <script src="js/owl.carousel.min.js"></script>
-    @stop
+
+<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-arabic.js')}}"></script>
+<script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/wow.min.js')}}"></script>
+<script>new WOW().init();</script>
+@stop
 </body>
 
 </html>
