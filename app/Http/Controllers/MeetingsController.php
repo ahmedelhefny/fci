@@ -18,7 +18,7 @@ class MeetingsController extends Controller
             ->where('S_date','=',date('Y-m-d',time()))
             ->get();
 
-        $allMeetings=DB::table('AllMeeting')
+        $allMeetings=DB::table('allmeeting')
             ->orderBy('Year','desc')
             ->get();
 
@@ -31,7 +31,7 @@ class MeetingsController extends Controller
             ->whereYear('S_date', '=', date('Y'))
 
             ->get();
-            $contact=DB::table('contactUs')->first();
+            $contact=DB::table('contactus')->first();
 
 
         return view('meetings',compact('SData' ,'day','contact','SDay','allMeetings'));
@@ -43,7 +43,7 @@ class MeetingsController extends Controller
             ->where('S_date','=',date('Y-m-d',time()))
             ->get();
 
-        $allMeetings=DB::table('AllMeeting')
+        $allMeetings=DB::table('allmeeting')
             ->orderBy('Year','desc')
             ->get();
 
@@ -51,7 +51,7 @@ class MeetingsController extends Controller
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
             ->where('seminars.id','=',$id)
             ->first();
-            $contact=DB::table('contactUs')->first();
+            $contact=DB::table('contactus')->first();
 
         return view('informations' , compact('AllData','SDay','contact','allMeetings'));
     }
@@ -124,10 +124,10 @@ class MeetingsController extends Controller
             ->where('S_date','=',date('Y-m-d',time()))
             ->get();
 
-        $allMeetings=DB::table('AllMeeting')
+        $allMeetings=DB::table('allmeeting')
             ->orderBy('Year','desc')
             ->get();
-        $contact=DB::table('contactUs')->first();
+        $contact=DB::table('contactus')->first();
 
         return view('survey', compact('S_id','SDay','contact','allMeetings'));
     }

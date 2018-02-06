@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+     <meta name="viewport" content="width=1200">
+     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>الملتقي الثاني لمطوري تكنولوجيا المعلومات</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -109,7 +109,7 @@
                                     
                                             <div class="form-group">
                                                 <label for="exampleInputFile">تاريخ الملتقي</label>
-                                                <input type="text" name="date" id="exampleInputFile" placeholder="2017">
+                                                <input type="text" name="date"  placeholder="2017">
                                             </div>
                                     
                                             <button type="submit" class="btn btn-default">اضافة</button>
@@ -124,39 +124,39 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputFile"> اسم الندوة</label>
-                                                <input type="text" name="sname"  id="exampleInputFile" placeholder="2017" required>
+                                                <input type="text" name="sname"   placeholder="2017" required>
                                             </div>
                                             <div class="form-group">
                                                     <label for="exampleInputFile">  صورة الندوة</label>
-                                                    <input type="file" name="simg" id="exampleInputFile">
+                                                    <input type="file" name="simg" >
                                                 </div>
                                                 <div class="form-group">
                                                         <label for="exampleInputFile"> نبذوة عن الندوة</label>
-                                                        <input type="text" name="scontent" id="exampleInputFile" required>
+                                                        <input type="text" name="scontent"  required>
                                                     </div>
                                                  <div class="form-group">
                                                             <label for="exampleInputFile">  بداية الندوة</label>
-                                                            <input type="time" name="sstart" id="exampleInputFile" required>
+                                                            <input type="time" name="sstart"  required>
                                                    </div>
                                                      <div class="form-group">
                                                             <label for="exampleInputFile">  نهاية الندوة</label>
-                                                             <input type="time" name="send" id="exampleInputFile" required>
+                                                             <input type="time" name="send"  required>
                                                       </div>
                                                       <div class="form-group">
                                                                     <label for="exampleInputFile">  تاريخ الندوة</label>
-                                                                    <input type="date" name="sdate" id="exampleInputFile" required >
+                                                                    <input type="date" name="sdate"  required >
                                                        </div>
                                                        <div class="form-group">
                                                             <label for="exampleInputFile">  اسم المتحدث</label>
-                                                            <input type="text" name="sspname" id="exampleInputFile" required>
+                                                            <input type="text" name="sspname"  required>
                                                      </div>
                                                      <div class="form-group">
                                                             <label for="exampleInputFile">  نبذة عن المتحدث</label>
-                                                            <input type="text" name="sspcontent" id="exampleInputFile" required>
+                                                            <input type="text" name="sspcontent"  required>
                                                      </div>
                                                      <div class="form-group">
                                                             <label for="exampleInputFile">   اسم الشركة المنتمي اليها </label>
-                                                            <input type="text" name="sspcompany" id="exampleInputFile" >
+                                                            <input type="text" name="sspcompany"  >
                                                      </div>
                                                
 
@@ -175,7 +175,7 @@
                                             <div class="form-group">
                                                     <label class="custom-file-label" for="customFile">اختار صورة</label>
 
-                                                    <input type="file" name="semimg" class="custom-file-input" id="customFile">
+                                                    <input type="file" name="semimg" class="custom-file-input" >
                                                 </div>
                                             <select class="form-control" name="semid">
                                                     <option selected>Open this select menu</option>
@@ -199,7 +199,7 @@
                                             <div class="form-group">
                                                     <label class="custom-file-label" for="customFile">اختيار الصورة</label>
 
-                                                    <input type="file" name="imp_url" class="custom-file-input" id="customFile">
+                                                    <input type="file" name="imp_url" class="custom-file-input" >
                                                 </div>
                                     
                                             <button type="submit" class="btn btn-default">اضافة</button>
@@ -215,16 +215,16 @@
 
                                         <div class="form-group">
                                             <label for="exampleInputFile"> اسم الشركه</label>
-                                            <input type="text" name="partname" id="exampleInputFile" placeholder="company name">
+                                            <input type="text" name="partname"  placeholder="company name">
                                         </div>
                                         <div class="form-group">
                                             <label class="custom-file-label" for="customFile">اختيار الصورة</label>
 
-                                            <input type="file" name="partimg" class="custom-file-input" id="customFile">
+                                            <input type="file" name="partimg" class="custom-file-input" >
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile"> نيذه عن الشركه</label>
-                                            <input type="text" name="partcontent" id="exampleInputFile" placeholder="about company">
+                                            <input type="text" name="partcontent"  placeholder="about company">
                                         </div>
 
                                         <button type="submit" class="btn btn-default">اضافة</button>
@@ -238,14 +238,14 @@
                                         {{ csrf_field() }}
                                 <div class="form-group">
                                 <label for="exampleInputFile"> صورة الملتقي</label>
-                                <input type="file" name="meetimg" id="exampleInputFile">
+                                <input type="file" name="meetimg" >
                                   </div>
 
                             <button type="submit" class="btn btn-default">اضافة</button>
                             </form>
                                     </div>
                         </div>
-                        <div class='col-lg-offset-3 col-md-offset-2 col-sm-offset-1 col-lg-6  col-md-8 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-1'>
+                        <div class='col-lg-offset-2 col-sm-offset-1 col-lg-8  sm-10 col-xs-12 col-lg-offset-2 col-sm-offset-1'>
                                 <div class="div two9" id="two9">
                                     <form action="/getrollers" method="post" id="sem" >
                                         {{ csrf_field() }}
@@ -266,7 +266,7 @@
 
 
 
-                                    <table class="table table-striped table-bordered table-hover">
+                                    <table class="table table-striped  table-hover">
                                         <caption>عرض المسجلين</caption>
                                         <thead style="background: #066aab; color: white;">
                                         <tr>
@@ -285,33 +285,39 @@
                                     </table>
                                     <br>
                                     <br>
-                                    <table class="table table-striped table-bordered table-hover">
+                                    <table class="table table-striped  table-hover">
                                         <caption> احصائيات  </caption>
                                         <thead style="background: #066aab; color: white;">
                                         <tr>
                                             <th>#</th>
-                                            <th>5</th>
-                                            <th>4</th>
-                                            <th>3</th>
-                                            <th>2</th>
-                                            <th>1</th>
+                                            <th colspan="2">الكليات</th>
+                                            <th colspan="2">العدد الكلي</th>
+                                            <th colspan="7">
+                                                السنة الدراسية
+
+                                                 <table class="table">
+                                                     <tr style="background: #066aab; color: white;">
+                                                         <td>1</td>
+                                                         <td>2</td>
+                                                         <td>3</td>
+                                                         <td>4</td>
+                                                         <td>5</td>
+                                                         <td>6</td>
+                                                         <td>7</td>
+                                                     </tr>
+
+                                                 </table>
+                                            </th>
 
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <th>1</th>
-                                            <td>f</td>
-                                            <td>f</td>
-                                            <td>f</td>
-                                            <td>f</td>
-                                            <td>f</td>
-                                        </tr>
+                                        <tbody id="s_view">
+
                                         </tbody>
                                     </table>
                                     </div>
                         </div>
-                        <div class='col-lg-offset-3 col-md-offset-2 col-sm-offset-1 col-lg-6  col-md-8 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-1'>
+                        <div class='col-lg-offset-2 col-sm-offset-1 col-lg-8  sm-10 col-xs-12 col-lg-offset-2 col-sm-offset-1'>
 
                                 <div class="div two10" id="two10">
                                     <form action="/getfeed" method="post" >
@@ -335,11 +341,11 @@
                                         <thead style="background: #066aab; color: white;">
                                         <tr>
                                             <th>question number</th>
-                                            <th>5</th>
-                                            <th>4</th>
-                                            <th>3</th>
-                                            <th>2</th>
                                             <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                            <th>5</th>
 
                                         </tr>
 
@@ -384,7 +390,7 @@
 
                                         <div class="form-group">
                                             <label for="exampleInputFile"> اسم المستخدم</label>
-                                            <input type="text" name="name" id="exampleInputFile" placeholder="اسم المستخدم">
+                                            <input type="text" name="name"  placeholder="اسم المستخدم">
                                         </div>
                                         <div class="form-group">
                                             <label class="custom-file-label" for="customFile"> البريد الالكتروني</label>
@@ -393,18 +399,18 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile"> الرقم السري </label>
-                                            <input type="password" name="password" id="exampleInputFile" placeholder="الرقم السري">
+                                            <input type="password" name="password"  placeholder="الرقم السري">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputFile"> نأكيد الرقم السري </label>
-                                            <input type="password" name="password_confirmation" id="exampleInputFile" placeholder="تأكيد الرقم">
+                                            <input type="password" name="password_confirmation"  placeholder="تأكيد الرقم">
                                         </div>
 
                                         <button type="submit" class="btn btn-default">اضافة</button>
                                     </form>
                                     </div>
                         </div>
-                        <div class='col-lg-offset-3 col-md-offset-2 col-sm-offset-1 col-lg-6  col-md-8 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-1'>
+                        <div class='col-lg-offset-2 col-sm-offset-1 col-lg-8  sm-10 col-xs-12 col-lg-offset-2 col-sm-offset-1'>
                                 <div class="div two13" id="two13">
                                     <h3>  ادارة المستخدمين </h3>
 
@@ -497,15 +503,39 @@
 
                     }
 
+                    for(var i=0; i<data.allFaculty.length ;i++)
+                    {
+
+                        $('#s_view').append('<tr>'+
+                            '<td>'+ (i+1) +'</td>'+
+                            '<td colspan="2">'+ data.allFaculty[i]['R_faculty'] +'</td>'+
+                            '<td colspan="2">'+ data.numOfStu[i]+'</td>'+
+                            '<td colspan="7">' +
+                                '<table class="table " >'+
+                                        '<tr>'+
+                                                '<td>'+data.levelCount[i][1] +'</td>'+
+                                                '<td>'+data.levelCount[i][2] +'</td>'+
+                                                '<td>'+data.levelCount[i][3] +'</td>'+
+                                                '<td>'+data.levelCount[i][4] +'</td>'+
+                                                '<td>'+data.levelCount[i][5] +'</td>'+
+                                                '<td>'+data.levelCount[i][6] +'</td>'+
+                                                '<td>'+data.levelCount[i][7] +'</td>'+
+                                        '</tr>'+
+
+                                '</table>'+
+
+                            '</td>'
 
 
+
+                            +'</tr>');
+
+                    }
+
+                    }
 
 
                 }
-                if (!data.success) {
-
-                }
-            }
 
 
         });
@@ -530,8 +560,23 @@
             success: function (data) {
 
                 if (data.success == true) {
-                    alert('A7A');
-         
+
+           for(var i=0; i<7 ;i++)
+                    {
+                        $('#view_f').append('<tr>'+
+                            '<td>'+ (i+1) +'</td>'+
+                            '<td>'+ data.q[i]['0'] +'</td>'+
+                            '<td>'+ data.q[i]['1'] +'</td>'+
+                            '<td>'+ data.q[i]['2'] +'</td>'+
+                            '<td>'+ data.q[i]['3'] +'</td>'+
+                            '<td>'+ data.q[i]['4'] +'</td>'
+
+
+
+                            +'</tr>');
+
+                    }
+
 
                 }
                 if (!data.success) {

@@ -21,7 +21,7 @@ class GallaryController extends Controller
             ->where('S_date','=',date('Y-m-d',time()))
             ->get();
 
-        $allMeetings=DB::table('AllMeeting')
+        $allMeetings=DB::table('allmeeting')
             ->orderBy('Year','desc')
             ->get();
 
@@ -32,7 +32,7 @@ class GallaryController extends Controller
         $Spname=DB::table('speakers')
             -> join('seminars','seminars.id','=','speakers.Seminar_id')
             ->get();
-            $contact=DB::table('contactUs')->first();
+            $contact=DB::table('contactus')->first();
 
         return view('Gallery',compact('Spname','daY','contact','allMeetings','SDay'));
     }
@@ -42,7 +42,7 @@ class GallaryController extends Controller
             ->where('S_date','=',date('Y-m-d',time()))
             ->get();
 
-        $allMeetings=DB::table('AllMeeting')
+        $allMeetings=DB::table('allmeeting')
             ->orderBy('Year','desc')
             ->get();
 
@@ -53,7 +53,7 @@ class GallaryController extends Controller
         $imgs=SeminarImgs::where('Seminar_id',$id)->get();
         $total=SeminarImgs::where('Seminar_id',$id)->count();
         $S_name=Seminars::where('id',$id)->first();
-        $contact=DB::table('contactUs')->first();
+        $contact=DB::table('contactus')->first();
 
         return view('meeting_pic',compact('imgs','total','S_name','dAy','contact','SDay','allMeetings'));
     }

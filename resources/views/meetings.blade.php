@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=1200">
     <title>الندوات</title>
     <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
 
@@ -34,10 +34,7 @@
             box-shadow: 0px 3px #eee;
             top: 0;
         }
-        .foot
-        {
-            top: 0;
-        }
+
     </style>
 
 </head>
@@ -49,9 +46,10 @@
 @extends('master')
 @section('body')
 
+<div class="wow pulse" style="width: 100%; text-align: center;">
+    <img src="images/semin3.png">
 
-   <h2 style="text-align: center;">All Seminars  <i class="fa fa-university" aria-hidden="true"></i>
-       </h2>
+</div>
 <div class="container">
 <div class="row text-center">
     @foreach($SData as $key=>$SDatum)
@@ -73,7 +71,16 @@
           <h4>   {{$SDatum->SP_company}}</h4>
           <br>
 
-        <p><a href="/informations/{{$SDatum->Seminar_id}}" class="btn btn-primary" role="button">تفاصيل الندوه</a></p>
+        <div class="svg-wrapper">
+                <svg height="40" width="150" >
+                    <rect id="shape" class="s1" height="40" width="150" />
+                    <div id="text">
+                        <a href="/informations/{{$SDatum->Seminar_id}}"  ><span class="spot">تفاصيل الندوه</span></a>
+
+                    </div>
+                </svg>
+            </div>
+
       </div>
     </div>
 
@@ -90,7 +97,7 @@
 
 <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-arabic.js')}}"></script>
-<script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>   
+<script src="{{asset('js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
     
 <script src="{{asset('js/wow.min.js')}}"></script>

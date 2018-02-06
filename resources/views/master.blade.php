@@ -11,16 +11,16 @@
             <img src="{{asset('images/fa.jpg')}}">
 
         </div>
-        <form method="post" action="/login">
+        <form method="post" action="/login" id="form-login">
             {{csrf_field()}}
             <div class="form-input">
                 <input type="email" name="email" id="em"  placeholder="البريد الالكتروني">
-                <img src="images/gmail.png" style="bottom: 214px;">
+                <img src="{{asset('images/gmail.png')}}" style="bottom: 214px;">
 
 
 
                 <input type="password" name="password" id="pa" placeholder="الرقم السري">
-                <img src="images/cl.png">
+                <img src="{{asset('images/cl.png')}}">
             </div>
             <div class="invalid-feedback">
                 @if($errors->any())
@@ -34,7 +34,16 @@
                     <input name="checked" type="checkbox" checked>تذكرني
                 </label>
             </div>
-            <button type="submit" class="btn btn-default">Login</button>
+            <div class="svg-wrapper" style="margin-top: 20px;">
+                <svg height="40" width="150" >
+                    <rect id="shape" class="s1" height="40" width="150" />
+                    <div id="text">
+                        <a onclick="document.getElementById('form-login').submit();"><span class="spot">تسجيل دخول</span></a>
+
+                    </div>
+                </svg>
+            </div>
+
         </form>
 
     </div>
@@ -97,7 +106,7 @@
                     </li>
                 @elseif(Auth::check() && Auth::user()->hasRole('anther'))
                     <li>
-                        <a href="/anther"> لوحة التحكم</a>
+                        <a href="/allReg">  عرض المسجلين</a>
 
                     </li>
                     <li>
@@ -134,7 +143,7 @@
         <hr style="width:100px;height:2px;background:#fff;margin-top:-5px;">
         <div class="row">
             <div class="footer">
-                <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="fot col-lg-3 col-md-3 col-sm-6 col-xs-12">
 
                     <ul id='ul-u'>
                         <h3 style='margin-right:13px;'>اتحاد الكلية</h3>
@@ -144,8 +153,17 @@
                         <br>
                         @if(Auth::check() && Auth::user()->hasRole('admin'))
 
-                        <button style='margin-right:9px;' class="btn btn-danger" id="btn-edit-u">edit</button>
-                            @endif
+                            <div class="svg-wrapper">
+                                <svg height="40" width="150" >
+                                    <rect id="shape" class="s2" height="40" width="150" />
+                                    <div id="text">
+                                        <a  id="btn-edit-u" ><span style='margin-right:9px;' class="spot">Edit</span></a>
+
+                                    </div>
+                                </svg>
+                            </div>
+
+                        @endif
 
 
                     </ul>
@@ -160,14 +178,35 @@
                         <div class="text-footer"><i class="fa fa-phone icon-footer"></i><input name="num1" type="text" class="form-control" value="{{old('num1', $contact->num1)}}" ></div>
                         <input type="hidden" name="id" value="{{$contact->id}}">
 
-                        <button style='margin-right:24px;' type="submit"  class="btn btn-primary">Update</button>
-                        <input type="button" class="btn btn-danger" id="btn-cancel-u" value="Cancel">
+
+                        <div class="svg-wrapper">
+                            <svg height="40" width="150" >
+                                <rect id="shape" class="s1" height="40" width="150" />
+                                <div id="text">
+                                    <a onclick="document.getElementById('form-u').submit();"><span style='margin-right:24px;' class="spot">Update</span></a>
+
+                                </div>
+                            </svg>
+                        </div>
+
+
+
+                        <div class="svg-wrapper">
+                            <svg height="40" width="150" >
+                                <rect id="shape" class="s2" height="40" width="150" />
+                                <div id="text">
+                                    <a  id="btn-cancel-u" ><span style='margin-right:24px;' class="spot">Cancel</span></a>
+
+                                </div>
+                            </svg>
+                        </div>
+
 
 
                     </form>
 
                 </div>
-                <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="fot col-lg-3 col-md-3 col-sm-6 col-xs-12">
 
                     <ul id='ul-c'>
                         <h3 style='margin-right:13px;'>الاتصال العام</h3>
@@ -176,9 +215,16 @@
                         <a href="#"><li><i class="fa fa-phone"></i> {{$contact->num2}}</li></a>
                         <br>
                         @if(Auth::check() && Auth::user()->hasRole('admin'))
+                            <div class="svg-wrapper">
+                                <svg height="40" width="150" >
+                                    <rect id="shape" class="s2" height="40" width="150" />
+                                    <div id="text">
+                                        <a  id="btn-edit-c" ><span style='margin-right:9px;' class="spot">Edit</span></a>
 
+                                    </div>
+                                </svg>
+                            </div>
 
-                        <button style='margin-right:9px;' class="btn btn-danger" id="btn-edit-c">edit</button>
                             @endif
 
                     </ul>
@@ -192,16 +238,35 @@
                         <div class="text-footer"><i class="fa fa-phone icon-footer"></i><input name="num2" type="text" class="form-control" value="{{old('num2', $contact->num2)}}" ></div>
                         <input type="hidden" name="id" value="{{$contact->id}}">
 
-                        <button style='margin-right:24px;' type="submit"  class="btn btn-primary">Update</button>
-                        <input type="button" class="btn btn-danger" id="btn-cancel-c" value="Cancel">
+
+                        <div class="svg-wrapper">
+                            <svg height="40" width="150" >
+                                <rect id="shape" class="s1" height="40" width="150" />
+                                <div id="text">
+                                    <a onclick="document.getElementById('form-c').submit();"><span style='margin-right:24px;' class="spot">Update</span></a>
+
+                                </div>
+                            </svg>
+                        </div>
+
+                        <div class="svg-wrapper">
+                            <svg height="40" width="150" >
+                                <rect id="shape" class="s2" height="40" width="150" />
+                                <div id="text">
+                                    <a  id="btn-cancel-c" ><span style='margin-right:24px;' class="spot">Cancel</span></a>
+
+                                </div>
+                            </svg>
+                        </div>
+
 
 
                     </form>
 
                 </div>
-                <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="fot col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <h3>الشكاوي</h3>
-                    <form  method="post" action="/storecomplain" >
+                    <form  method="post" action="/storecomplain" id="send-exp" style="margin-top: 41px;" >
                         {{csrf_field()}}
                     <textarea placeholder="...." name="C_content" id="content" class="complain  @if ($errors->has('C_content'))  {{'is-invalid'}} @endif"></textarea>
                     <div class="invalid-feedback">
@@ -209,19 +274,66 @@
                                 {{$message}}
                             @endforeach
                         </div>
+
+                        <div class="svg-wrapper" style="margin-top: 20px;">
+                            <svg height="40" width="150" >
+                                <rect id="shape" class="s1" height="40" width="150" />
+                                <div id="text">
+                                    <a onclick="document.getElementById('send-exp').submit();"><span class="spot">ارسال</span></a>
+
+                                </div>
+                            </svg>
+                        </div>
                     
-                    <button type="submit" class="btn btn-primary"   >ارسال</button>
                     </form>
                 </div>
-                <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="fot col-lg-3 col-md-3 col-sm-6 col-xs-12">
 
-                    <ul>
+
                         <h3>تابعنا</h3>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-edge"></i></a>
-                    </ul>
+
+
+                        <table class="table28">
+                            <tr>
+
+                                <td>
+                                    <div class="color_fa s28">
+
+                                        <a href="#">
+                                            <div class="icon28 fa28"><center><i class="fa fa-facebook" aria-hidden="true"></i></center></div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color_tw s28">
+                                        <a href="#">
+                                            <div class="icon28 tw28"><center><i class="fa fa-twitter" aria-hidden="true"></i></center></div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color_yo s28">
+                                        <a href="#">
+                                            <div class="icon28 yo28"><center><i class="fa fa-youtube" aria-hidden="true"></i></center></div>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="color_go s28">
+                                        <a href="#">
+                                            <div class="icon28 go28"><center><i class="fa fa-google-plus" aria-hidden="true"></i></center></div>
+                                        </a>
+                                    </div>
+                                </td>
+
+
+
+                        </table>
+
+
+
+
+
                 </div>
             </div>
         </div>

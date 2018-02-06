@@ -9,7 +9,7 @@ body
 
     font-weight:400;
     font-size: 19px;
-    overflow: hidden;
+
 }
 
 
@@ -22,7 +22,7 @@ body
 {
     z-index: 9999;
     position: relative;
-    background: none;
+    background:rgba(194, 218, 218, 0.63);
     padding: 10px;
     position: fixed;
     width: 100%;
@@ -47,8 +47,8 @@ nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
 nav.navbar-findcond button.navbar-toggle > span.icon-bar { background: #fff; }
 nav.navbar-findcond ul.dropdown-menu { border: 0; background: #fff; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
 nav.navbar-findcond ul.dropdown-menu > li > a { color: #444; }
-nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #f14444; color: #fff; }
-nav.navbar-findcond span.badge { background: #f14444; font-weight: normal; font-size: 11px; margin: 0 4px; }
+nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #23b1ec; color: #fff; }
+nav.navbar-findcond span.badge { background: #23b1ec; font-weight: normal; font-size: 11px; margin: 0 4px; }
 nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
 .navbar i{
     font-size: 14px;
@@ -67,7 +67,7 @@ nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #f
 
     padding-bottom: 80px;
     position: relative;
-    top:-363px;
+
 }
 
 .foot .h1 {
@@ -300,3 +300,97 @@ nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #f
 
 
 /*end model*/
+
+/*media*/
+
+@media screen and (max-width: 1200px) {
+
+    .navbar .navbar-brand
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1095px) {
+
+    .navbar
+    {
+        font-size: 17px !important;
+    }
+}
+
+
+/*btn*/
+
+.svg-wrapper {
+    margin-top: 0;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+#shape {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke-dasharray: 85 400;
+    stroke-dashoffset: -220;
+    transition: 1s all ease;
+}
+
+.s1{   stroke: #009FFD;}
+.s2{   stroke: #785445;}
+
+#text {
+    margin-top: -35px;
+    text-align: center;
+}
+
+#text a {
+    color: #3b3b3b;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.1em;
+}
+
+.spot {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.svg-wrapper:hover #shape {
+    stroke-dasharray: 50 0;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+
+}
+.svg-wrapper:hover .s1{  stroke:#90CAF9; }
+
+
+/*social*/
+
+.color_fa{ background:#3b5998;}
+.color_yo{ background:#ff0115;}
+.color_go{ background:#dd4b39;}
+.color_tw{ background:#55acee;}
+
+
+.table28{padding-top:170px}
+.table28 tr{ height:100px; }
+.table28 td{   margin:0; padding:0;}
+.s28{ margin-left:10px; border-radius:5px 5px 5px 5px ;  transition:1s;   height:60px; width:60px;overflow:hidden; }
+.icon28 i{ color:#fff;  font-size:30px; box-sizing:border-box; padding-top:13px;transition:.4s;}
+
+.s28:hover{  cursor:pointer; background:#fff; border-radius:50px 50px 50px 50px ; transform:rotate(360deg)}
+.s28:hover .fa28 i{ color:#3b5998;}
+.s28:hover .yo28 i{ color:#ff0115; }
+.s28:hover .go28 i{ color:#dd4b39;}
+.s28:hover .tw28 i{ color:#55acee;}

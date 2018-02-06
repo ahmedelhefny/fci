@@ -1,9 +1,9 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=1200">
     <title>صور كل الندوات</title>
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Lateef" rel="stylesheet">
@@ -22,23 +22,20 @@
 
       <script src="{{asset('js/respond.min.js')}}"></script>
     <style>
-        html
-        {
-            overflow:auto !important;
-        }
-
-
-        .navbar
-        {
-            background: #fff;
-
-            box-shadow: 0px 3px #eee;
-            top: 0;
-        }
-        .foot
-        {
-            top: 0;
-        }
+    html
+    {
+        overflow: auto;
+    }
+    .navbar
+    {
+        background: #fff;
+        box-shadow: 0px 3px #eee;
+        top: 0;
+    }
+    .foot
+    {
+        top: 0;
+    }
     </style>
 
 
@@ -106,7 +103,7 @@
 
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-arabic.js')}}"></script>
-    <script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{asset('js/jquery.nicescroll.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
 <script>
     function openModal() {

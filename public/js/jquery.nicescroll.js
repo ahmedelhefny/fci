@@ -75,7 +75,7 @@
     zindex: "auto",
     cursoropacitymin: 0,
     cursoropacitymax: 1,
-    cursorcolor: "#666",
+    cursorcolor: "rgb(35, 177, 236)",
     cursorwidth: "7px",
 
     scrollspeed: 40,
@@ -89,7 +89,7 @@
     gesturezoom: true,
     grabcursorenabled: true,
     autohidemode: true,
-    background: "#eee",
+    background: "#efece7",
     iframeautoresize: true,
     cursorminheight: 32,
     preservenativescrolling: true,

@@ -40,11 +40,11 @@ class HomeController extends Controller
         $axes=DB::table('axes')->get();
         $ImgUrl=DB::table('impimgs')->get();
         $ImgLog=DB::table('contacts')->first();
-        $allMeetings=DB::table('AllMeeting')
+        $allMeetings=DB::table('allmeeting')
         ->orderBy('Year','desc')
         ->get();
 
-        $contact=DB::table('contactUs')->first();
+        $contact=DB::table('contactus')->first();
 
         return view('home',compact('ImgUrl','axes','parts','ImgLog','allMeetings','SDay','contact'));
 
@@ -93,7 +93,7 @@ class HomeController extends Controller
             ->whereYear('S_date', '=',$date)
 
             ->get();
-            $contact=DB::table('contactUs')->first();
+            $contact=DB::table('contactus')->first();
 
         return view('meetings',compact('SData','contact'));
     }
@@ -102,7 +102,7 @@ class HomeController extends Controller
     //contact edit
     public function uEdit()
     {
-        DB::table('contactUs')->where('id',\request('id'))
+        DB::table('contactus')->where('id',\request('id'))
         ->update(['email1' => \request('email1'),'email2' => \request('email2'),'num1' => \request('num1')]);
         return back();
 
@@ -110,7 +110,7 @@ class HomeController extends Controller
 
     public function cEdit()
     {
-        DB::table('contactUs')->where('id',\request('id'))
+        DB::table('contactus')->where('id',\request('id'))
         ->update(['email3' => \request('email3'),'email4' => \request('email4'),'num2' => \request('num2')]);
         return back();
 

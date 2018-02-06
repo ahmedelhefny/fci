@@ -83,7 +83,7 @@ $(document).ready(function(){
         }
 
         if($(window).scrollTop() + $(document).height() == $(document).height()) {
-            $('.navbar').css('background','none');
+            $('.navbar').css('background','rgba(194, 218, 218, 0.3686274509803922)');
 
         }
     });
@@ -176,4 +176,7 @@ $(document).ready(function(){
         $('.item3 h2').animateCss('fadeInDown');
         $('.item3 p').animateCss('fadeIn');
     });
+
+
+
 });

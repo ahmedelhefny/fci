@@ -72,6 +72,7 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
     //delete img logo
     Route::get('/DeleImgLo/{id}','HomeController@DelImgLogo');
 
+    Route::get('/admin','AdminController@getall');
 
 
     Route::post('/addmeeting','AdminController@addmeeting');
@@ -86,7 +87,6 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 
     Route::post('/addlogo','AdminController@addLogo');
 
-    Route::get('/admin','AdminController@getall');
 
     Route::post('/getrollers','AdminController@Reg');
     Route::post('/getfeed','AdminController@getfeed');
@@ -98,13 +98,10 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
     Route::post('/cEdit','HomeController@cEdit');
 
 
-
-
-
-
-
-
-
-
 });
 
+Route::group(['middleware'=>'roles','roles'=>['admin','anther']],function()
+{
+    Route::get('/allReg','AdminController@allReg');
+
+});

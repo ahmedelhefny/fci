@@ -11,6 +11,7 @@ use App\Contact;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Role;
+use App\Regiserations;
 
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class AdminController extends Controller
 
         ]);
 
-        DB::table('AllMeeting')->insert([
+        DB::table('allmeeting')->insert([
             ['Year' => \request('date')]
         ]);
         return back();
@@ -33,7 +34,7 @@ class AdminController extends Controller
 
     public function getallmeetings()
     {
-        $meetings=DB::table('AllMeeting')->get();
+        $meetings=DB::table('allmeeting')->get();
         return view('admin',compact('meetings'));
     }
 
@@ -69,8 +70,8 @@ class AdminController extends Controller
 
 
         $speakers->SP_name=\request('sspname');
-        $speakers->SP_company=\request('sspcontent');
-        $speakers->SP_content=\request('sspcompany');
+        $speakers->SP_company=\request('sspcompany');
+        $speakers->SP_content=\request('sspcontent');
         $speakers->Seminar_id=$seminars->id;
         $speakers->save();
 
@@ -155,82 +156,76 @@ class AdminController extends Controller
     }
     public function Reg()
     {
+
+        //start reg
         $roll=DB::table('regiserations')
             ->where('seminar_id','=',\request('semid'))
             ->get();
+        //end reg
 
-        return response()->json(['success'=>true,'roll'=>$roll],200);
+        //start getting statistics
+        $count=[];
+        $dept=[];
+        $dcount=[];
+        $level=[];
+        $lcount=[];
+
+        //start getting faculty and the number of pepole who attend the seminar
+
+        //هنا هنجيب الكليات اللي عندنا
+
+
+        $ff=DB::table('regiserations')
+            ->where('seminar_id','=',\request('semid'))
+            ->distinct()
+            ->get(['R_faculty']);
+        //هنا هنعمل loop علي الكليات علشان نعرف نجيب الcount
+        foreach ($ff as $key=>$item)
+        {
+            $count[$key]=DB::table('regiserations')
+                ->where('seminar_id','=',\request('semid'))
+                ->where('R_faculty','=',$item->R_faculty)
+                ->count();
+
+            //فوق كده جبنا ال count بتاع كل كليه
+
+
+            for ($i=1 ; $i<= 7 ;$i++)
+            {
+                $lcount[$key][$i]=DB::table('regiserations')
+                    ->where('seminar_id','=',\request('semid'))
+                    ->where('R_faculty','=',$item->R_faculty)
+                    ->where('R_level','=',$i)
+                    ->count();
+            }
+
+
+        }
+//end
+
+
+
+        return response()->json(['success'=>true,'roll'=>$roll,'allFaculty'=>$ff,'numOfStu'=>$count,'levelCount'=>$lcount],200);
     }
 
  public function getfeed()
     {
-        for ($i=0 ; $i<5 ;$i++)
+    for($i=0; $i<7; $i++)
+    {
+
+    
+        for ($j=0 ; $j<5 ;$j++)
         {
-            $q1[$i]=DB::table('feedback')
+            $ser="Q".($i+1);
+            $q[$i][$j]=DB::table('feedback')
                 ->where('seminar_id','=',\request('feedid'))
-                ->where('Q1',($i+1))
+                ->where($ser,($j+1))
                 ->count();
 
 
         }
-
-        for ($i=0 ; $i<5 ;$i++)
-        {
-            $q2[$i]=DB::table('feedback')
-                ->where('seminar_id','=',\request('feedid'))
-                ->where('Q2',($i+1))
-                ->count();
-
-
-        }
-        for ($i=0 ; $i<5 ;$i++)
-        {
-            $q3[$i]=DB::table('feedback')
-                ->where('seminar_id','=',\request('feedid'))
-                ->where('Q3',($i+1))
-                ->count();
-
-
-        }
-        for ($i=0 ; $i<5 ;$i++)
-        {
-            $q4[$i]=DB::table('feedback')
-                ->where('seminar_id','=',\request('feedid'))
-                ->where('Q4',($i+1))
-                ->count();
-
-
-        }
-        for ($i=0 ; $i<5 ;$i++)
-        {
-            $q5[$i]=DB::table('feedback')
-                ->where('seminar_id','=',\request('feedid'))
-                ->where('Q5',($i+1))
-                ->count();
-
-
-        }
-        for ($i=0 ; $i<5 ;$i++)
-        {
-            $q6[$i]=DB::table('feedback')
-                ->where('seminar_id','=',\request('feedid'))
-                ->where('Q6',($i+1))
-                ->count();
-
-
-        }
-        for ($i=0 ; $i<5 ;$i++)
-        {
-            $q7[$i]=DB::table('feedback')
-                ->where('seminar_id','=',\request('feedid'))
-                ->where('Q7',($i+1))
-                ->count();
-
-
-        }
-
-
-        return response()->json(['success'=>true,'q1'=>$q1,'q2'=>$q2,'q3'=>$q3,'q4'=>$q4,'q5'=>$q5,'q6'=>$q6,'q7'=>$q7],200);
+    }
+        return response()->json(['success'=>true,'q'=>$q],200);
     }
 
     public function adduser()
@@ -288,6 +283,27 @@ class AdminController extends Controller
 
 
         return back();
+
+
+
+    }
+
+ public function allReg()
+    {
+        $SDay=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
+        $allMeetings=DB::table('allmeeting')
+            ->orderBy('Year','desc')
+            ->get();
+
+        $regs=Regiserations::all();
+        $contact=DB::table('contactus')->first();
+
+
+
+        return view('viewReg',compact('regs','SDay','allMeetings','contact'));
 
 
 

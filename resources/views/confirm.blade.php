@@ -1,7 +1,11 @@
+<!DOCTYPE html>
+
 <html>
 <head>
 
     <meta name="description" charset="utf-8">
+    <meta name="viewport" content="width=700">
+
     <title>virifcation</title>
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap-arabic.css')}}">
