@@ -88,6 +88,14 @@ class HomeController extends Controller
     //get Archive
     public function gatArchive($date)
     {
+        $SDay=DB::table('seminars')
+            ->where('S_date','=',date('Y-m-d',time()))
+            ->get();
+
+        $allMeetings=DB::table('allmeeting')
+            ->orderBy('Year','desc')
+            ->get();
+
         $SData=DB::table('seminars')
             ->join('speakers','seminars.id','=','speakers.Seminar_id')
             ->whereYear('S_date', '=',$date)
@@ -95,7 +103,7 @@ class HomeController extends Controller
             ->get();
             $contact=DB::table('contactus')->first();
 
-        return view('meetings',compact('SData','contact'));
+        return view('meetings',compact('SData','contact','SDay','allMeetings'));
     }
 
 

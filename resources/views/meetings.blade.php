@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{asset('css/demo-page.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/bootstrap-arabic.css')}}">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="{{asset('css/nav.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
@@ -47,7 +47,7 @@
 @section('body')
 
 <div class="wow pulse" style="width: 100%; text-align: center;">
-    <img src="images/semin3.png">
+    <img src="{{asset('images/semin3.png')}}">
 
 </div>
 <div class="container">
