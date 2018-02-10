@@ -91,11 +91,21 @@
                         </div>
                 
                     <div class='right'>
-                        <ul style="text-align: center">
+                        @if(count($errors)>0)
+                        <ul style="text-align: center;
+    color: #fdfdfd;
+    background: #ad254b;
+    font-size: 16px;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 10px;
+
+">
                             @foreach($errors->all() as $e)
                                 <li>{{$e}}</li>
                             @endforeach
                         </ul>
+                        @endif
 
 
 
@@ -124,7 +134,7 @@
 
                                             <div class="form-group">
                                                 <label for="exampleInputFile"> اسم الندوة</label>
-                                                <input type="text" name="sname"   placeholder="2017" required>
+                                                <input type="text" name="sname"   required>
                                             </div>
                                             <div class="form-group">
                                                     <label for="exampleInputFile">  صورة الندوة</label>

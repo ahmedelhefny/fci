@@ -108,119 +108,171 @@
 
 /*start logo*/
 
-.o-logo
-{
+.timeline {
+    color: #000;
     background:#f9f9f9 url(../images/white_texture.jpg) repeat top left;
-    color: #333;
-    font-size: 13px;
+    padding: 20px 0;
+    height: 999px;
+    direction: ltr;
+}
+.timeline .logo-image {
+    width: 100%;
+    padding: 30px 276px 30px 276px;
+}
+.timeline .logo-image img {
+   width: 100px;
+    height: 100px;
 }
 
-.i-logo
-{
-    width: 100%;
-    padding: 20px;
-}
-.i-logo .logos
-{
-    margin: 50px 100px 50px 100px ;
-    text-align: center;
-}
-.i-logo .logos .img
-{
-    width: 100%;
-    height: 260px;
-}
-.i-logo .logos .log-im
-{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+.timeline h2 {
+    margin: 0;
+    padding: 20px 0;
 }
 
-.logos ul
-{
-    list-style-type: none;
-    background: #fff;
-    list-style: none;
-    display: inline-flex;
+.timeline ul {
+    background: 0 0;
+
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
-.logos ul li
-{
-    width: 50%;
-    display:block;
+
+.timeline ul li {
+    background: #ededed;
+    position: relative;
+    margin: 0 auto;
+    width: 3px;
+    padding-bottom: 40px;
+    list-style-type: none;
 }
-.logos ul li img
-{
-    height: 150px;
-    width: 150%;
+
+.timeline ul li::before {
+    content: '';
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border: 3px solid #426779;
     border-radius: 50%;
-}
-
-.i-logo  .branch img
-{
-
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
+    box-sizing: border-box;
 
 }
 
-.i-logo .branch .branch1,
-.i-logo .branch .branch2,
-.i-logo .branch .branch3,
-.i-logo .branch .branch4
-{
-    height: 345px;
+.timeline ul li:nth-child(2n+1) .content {
+    left: 50px;
+}
+
+.timeline ul li:nth-child(2n) .content::before {
+    right: -42px;
+}
+
+.timeline ul li .content {
+    background: #fff;
+    position: relative;
+    z-index: 5;
+    border-left: 3px solid #426779;
+    position: relative;
+    top: 7px;
+    width: 450px;
     padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 4px;
-    box-shadow: -1px 4px 20px #08080812;
-    color: white;
+    text-align: left;
+    box-shadow: 0 0 5px rgba(0,0,0,.07);
+}
+
+.timeline ul li:nth-child(2n+1) .content::before {
+    left: -44px;
 }
 
 
-.i-logo .branch .branch1
+.timeline ul li .content::before {
+    content: '';
+    background: #44697b;
+    position: absolute;
+    top: 40px;
+    width: 42px;
+    height: 3px;
+}
+
+.timeline ul li .content .time {
+    color: #fff;
+    padding: 8px 18px;
+    background-color: rgba(6,72,96,.55);
+    display: inline-block;
+    font-size: 18px;
+    position: absolute;
+    left: calc(50% - 48.75px);
+    top: -15px;
+    z-index: 5;
+}
+
+
+.timeline ul li .content .time::before {
+    width: 15px;
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 0;
+    height: 15px;
+    background-color: rgba(65,103,121,.75);
+    z-index: 0;
+    -webkit-clip-path: polygon(100% 0,0 100%,100% 100%);
+    clip-path: polygon(100% 0,0 100%,100% 100%);
+}
+
+.timeline ul li .content .time {
+    color: #fff;
+    font-size: 18px;
+}
+
+.timeline ul li .content .image {
+    width: 100%;
+    margin: auto;
+}
+
+.timeline ul li .content .image img {
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 3%;
+    display: block;
+}
+
+
+.timeline ul li .content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.timeline ul li .content h3
 {
-    background: #b3e5fc;
+    color: #666;
+    line-height: 1.6;
 
+    letter-spacing: 1px;
+    padding-top: 15px;
+    text-align: center;
+    width: 100%;
 }
- .i-logo .branch .branch2
-{
-    background: #81d4fa;
-
+.timeline ul li:nth-child(2n) .content {
+    left: calc(-450px - 45px);
+    border-left: 0;
+    border-right: 3px solid rgba(6,72,96,.96);
 }
- .i-logo .branch .branch3
-{
-    background: #4fc3f7;
-
-}
- .i-logo .branch .branch4
-{
-
-    background: #29b6f6;
-
-}
-
-.i-logo .branch h2,.i-logo .branch h3
-
-{
-   width: 100%;
-    box-shadow: 2px 2px ;
-    padding: 3px;
-}
-
-
 /*end logo*/
 
 
-/*start people*/
-
-
-
-/*end people*/
 
 /*start ax*/
 
@@ -472,27 +524,17 @@ a.image {
 
 /*typeWriter*/
 
-.typewriter p {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: pre-wrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation:
-            typing 3.5s steps(40, end),
-            blink-caret .75s step-end infinite;
+.wrap {
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+    top: 35%;
+    font-size: 30px;
 }
 
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+.test {
+    margin-top: 10px;
 }
 
 
@@ -644,3 +686,107 @@ a.image {
 }
 
 
+.sk-folding-cube {
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    top: 25%;
+}
+
+.sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+.sk-folding-cube .sk-cube4:before {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+    0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    } 25%, 75% {
+          -webkit-transform: perspective(140px) rotateX(0deg);
+          transform: perspective(140px) rotateX(0deg);
+          opacity: 1;
+      } 90%, 100% {
+            -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+            opacity: 0;
+        }
+}
+
+@keyframes sk-foldCubeAngle {
+    0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    } 25%, 75% {
+          -webkit-transform: perspective(140px) rotateX(0deg);
+          transform: perspective(140px) rotateX(0deg);
+          opacity: 1;
+      } 90%, 100% {
+            -webkit-transform: perspective(140px) rotateY(180deg);
+            transform: perspective(140px) rotateY(180deg);
+            opacity: 0;
+        }
+}
+
+.loading
+{
+    height: 100%;
+    z-index: 9999999;
+    top: 0;
+    position: fixed;
+    background-color: #1c9c8d;
+    width: 100%;
+}
+
+.loading h2
+{
+    top: 35%;
+    position: relative;
+}

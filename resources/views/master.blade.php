@@ -65,8 +65,8 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
                 <li ><a href="/"> <i class="fa fa-home"></i> الرئيسية  <span class="sr-only">(current)</span></a></li>
-                <li><a href="#three"> <i class="fa fa-object-group"></i>  شركاء النجاح </a></li>
-                <li><a href="#axu"> <i class="fa fa-stack-exchange"></i> محاور الملتقي </a></li>
+                <li><a href="/#three"> <i class="fa fa-object-group"></i>  شركاء النجاح </a></li>
+                <li><a href="/#axu"> <i class="fa fa-stack-exchange"></i> محاور الملتقي </a></li>
                 <li><a href="/meetings"> <i class="fa fa-globe"></i> الندوات  </a></li>
                 <li><a href="/Gallery"> <i class="fa fa-image"></i> صور الندوات </a></li>
                 <li class="dropdown">

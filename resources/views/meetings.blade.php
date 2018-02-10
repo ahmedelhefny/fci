@@ -57,8 +57,8 @@
     <div id="sat">
 
 
-    <div class="col-lg-3 col-sm-6 col-md-4">     
-    <div class="thumbnail">
+    <div class="col-lg-4 col-sm-6 col-md-4">
+    <div class="thumbnail wow fadeInLeft" data-wow-duration="2s">
       <img  src="{{asset('images/'.$SDatum->S_url)}}" alt="...">
       <div class="caption">
 

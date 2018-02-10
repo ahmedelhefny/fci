@@ -91,149 +91,60 @@
     <!--end carousal-->
 
 
-    <!-- logo-->
+    <!-- people and logo-->
 
-    <section class="o-logo">
-        <div class="i-logo">
-            <div class="container-fluid">
-
-                <div class="logos">
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <div>
-                            <img class="log-im" src="/images/mans.png">
-                            <h3 class="wow zoomInDown">Mansoura University</h3>
-
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-
-                        @if(isset($ImgLog->Log_url))
-                            @if(Auth::check() && Auth::user()->hasRole('admin'))
-                        <a href="/DeleImgLo/{{$ImgLog->id}}" style="color: red; font-size: 20px; font-weight: bolder;"> &times; </a>
-                            @endif
-
-
-
-                        <img  class="img" src="{{asset('images/contact_imgs/'.$ImgLog->Log_url)}}">
-                            @endif
-
-                    </div>
-                    <div class="col-md-3">
-                        <img class="log-im" src="/images/fa.jpg">
-                        <h3 class="wow zoomInDown">Faculty Of Computer Science  And Information Technology  </h3>
-                    </div>
-                </div>
-
-
-              </div>
-
-
-
-                <div class="main2">
-                    <!-- SEVENTH EXAMPLE -->
-                    <div class="view view-seventh">
-                        <img src="images/ash.jpg" />
-                        <div class="mask">
-                            <h2>تحت ريادة</h2>
-                            <h3> أد/ أشرف عبدالباسط</h3>
-                            <p>نائب رئيس جامعة المنصورة</p>
-                        </div>
-                    </div>
-                    <div class="view view-seventh">
-                        <img src="images/moh.jpg" />
-                        <div class="mask">
-                            <h2>تحت رعاية</h2>
-                            <h3> أد/ محمد القناوي</h3>
-                            <p>رئيس جامعة المنصورة</p>
-                        </div>
-                    </div>
-                    <div class="view view-seventh">
-                        <img src="images/de.jpg" />
-                        <div class="mask">
-                            <h2> بالشراكه مع </h2>
-                            <h3>جمعيه الدلتا </h3>
-                            <p>ومجموعه من الشركات المتخصصه</p>
-                        </div>
-                    </div>
-                    <div class="view view-seventh">
-                        <img src="images/dr1.jpg" />
-                        <div class="mask">
-                            <h2>تحت اشراف</h2>
-                            <h3> أد/ حسن سليمان </h3>
-                            <p>(عميد كليه الحاسبات والمعلومات)</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-    <!-- end logo-->
-
-    <!-->
-    <!-- start people
-
-          <div class="row branch">
-              <div class="col-md-3">
-                  <div class="branch1">
-                      <img src="images/moh.jpg">
-                      <div>
-                          <h2>تحت رعاية</h2>
-                          <h3> أد/ محمد القناوي</h3>
-                          <p>(رئيس جامعة المنصورة)</p>
-                      </div>
-
-                  </div>
-
-              </div>
-
-              <div class="col-md-3">
-                  <div class="branch2">
-                      <img src="images/ash.jpg">
-                      <div>
-                          <h2>تحت ريادة</h2>
-                          <h3> أد/ أشرف عبدالباسط</h3>
-                          <p>(نائب رئيس جامعة المنصورة)</p>
-                      </div>
-                  </div>
-
-
-              </div>
-                <div class="col-md-3">
-                    <div class="branch3">
-                        <img src="images/moh.jpg">
-                        <div>
-                            <h2>تحت اشراف</h2>
-                            <h3> أد/ حسن سليمان </h3>
-                            <p>(عميد كليه الحاسبات والمعلومات)</p>
-                        </div>
-
-                    </div>
-
-              </div>
-                <div class="col-md-3">
-                    <div class="branch4">
-                        <img src="images/de.jpg">
-                        <div>
-                            <h2> بالشراكه مع </h2>
-                            <h3>جمعيه الدلتا </h3>
-                            <p>ومجموعه من الشركات المتخصصه</p>
-                        </div>
-
-                    </div>
-
-              </div>
-
-          </div>
-
--->
-
-            </div>
+    <section class="timeline lg-padding" id="timeline">
+        <div class="logo-image">
+            <img src="{{asset('images/mans.png')}}" alt=".....">
+            <img style="border-radius: 50%; float: right" src="{{asset('images/fa.jpg')}}" alt="......">
 
         </div>
 
+        <h2 class="title upper linear-text sm-title ver-bold text-center">المشرفين علي الملتقي</h2>
+
+        <ul>
+
+            <li>
+                <div class="content text-left wow fadeInLeft  animated" data-aos="fade-left" data-aos-offset="190" data-aos-duration="700" data-aos-delay="0" style="visibility: visible; animation-name: fadeInLeft;">
+                    <div class="time ver-bold">
+                        تحت رعاية
+                    </div>
+                    <h3>أ.د/ محمد القناوي</h3>
+                    <p>رئيس جامعة المنصورة</p>
+                </div>
+            </li>
+
+            <li style="bottom:64px;">
+                <div class="content text-left C wow fadeInRight  animated" data-aos="fade-left" data-aos-offset="190" data-aos-duration="700" data-aos-delay="0" style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="time ver-bold">
+                        تحت ريادة
+                    </div>
+                    <h3>أ.د/ أشرف عبدالباسط</h3>
+                    <p>نائب رئيس جامعة المنصورة</p>
+                </div>
+            </li>
+
+            <li style="bottom:124px;">
+                <div class="content text-left wow fadeInLeft  animated" data-aos="fade-left" data-aos-offset="190" data-aos-duration="700" data-aos-delay="0" style="visibility: visible; animation-name: fadeInLeft;">
+                    <div class="time ver-bold">
+                        تحت اشراف
+                    </div>
+                    <h3>أ.د/ حسن سليمان</h3>
+                    <p>عميد كلية الحاسبات و المعلومات</p>
+                </div>
+            </li>
+
+            <li style="bottom: 186px;">
+                <div class="content text-left C wow fadeInRight  animated" data-aos="fade-left" data-aos-offset="190" data-aos-duration="700" data-aos-delay="0" style="visibility: visible; animation-name: fadeInRight;">
+                    <div class="time ver-bold">
+                        بالشراكة مع
+                    </div>
+                    <h3> جمعية الدلتا </h3>
+                    <p>  ومجموعة من الشركات المتخصصة</p>
+                </div>
+            </li>
+
+        </ul>
     </section>
 
 
@@ -309,6 +220,18 @@
             </div>
         </div>
     </section>
+    <div class="loading">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+        <div class="wrap">
+            <a href="#" class="start"></a>
+            <div class="test" data-text="الملتقي الثاني لمطوري تكنولوجيا المعلومات"></div>
+        </div>
+    </div>
 
 
     <!--end 3-->
@@ -323,6 +246,8 @@
     <script src="js/wow.min.js"></script>
     <script>new WOW().init();</script>
     <script src="js/new.js"></script>
+       
         @stop
     </body>
+
 </html>

@@ -47,14 +47,14 @@
                     <h2>{{$AllData->S_name}}</h2>
             <img src="{{asset('images/'.$AllData->S_url)}}" alt="Seminars_Image">
         <div class="row">
-        <div class="namee">
+        <div class="">
 
             
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <h4 style="display:inline-block;"><i class="fa fa-user-circle"></i>{{$AllData->SP_name}}</h4>    <h4 style="display:inline-block;">(The Lecturer)</h4>
+                <h4 style="display:inline-block;"><i class="fa fa-user-circle"></i> {{ $AllData->SP_name }} </h4>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <a href="/getAllImg/{{$AllData->id}}"><h4><i class="fa fa-picture-o"></i> جميع صور الندوة</h4></a>
+                <a href="/getAllImg/{{$AllData->id}}"><h4><i class="fa fa-picture-o"></i> جميع صور الندوة </h4></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <h4><i class="fa fa-clock-o"></i> From:{{$AllData->S_start}}  - To:{{$AllData->S_end}}</h4>
